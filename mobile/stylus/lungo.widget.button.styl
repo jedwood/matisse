@@ -1,0 +1,75 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Widgets
+ * @class Button
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+.button, button
+  display: inline-block
+  border: none
+  cursor: pointer
+  font-family: inherit
+  text-align: center
+  text-decoration: none
+  outline: none
+  background: none
+
+  header &
+    font-size: 1.0em
+    height: H = 32px
+    line-height: H
+    padding: 0 8px
+    & > .icon
+      font-size: 1.3em
+    & .icon + abbr
+      position: relative
+      top: -2px
+      left: 1px
+      display: inline
+
+  article &
+    font-size: FONT_SIZE_BIG
+    height: H = 40px
+    line-height: (H - 2)
+    padding: 0 14px
+
+    & .icon + abbr
+      margin-left: 6px
+    &:not(.anchor) .icon
+      line-height: (H / 2)
+
+    &.anchor
+      display: block
+      // width: inherit
+      width: 100%
+      position: relative
+      & .icon
+        position: absolute
+        left: 14px
+
+    &.large
+      height: H = 52px
+      padding: 0 20px
+      font-size: FONT_SIZE_LARGE
+      line-height: (H - 2)
+      & .icon + abbr
+        margin-left: 10px
+
+    &.small
+      height: H = 30px
+      padding: 0 10px
+      font-size: FONT_SIZE_SMALL
+      line-height: (H - 2)
+      & .icon + abbr
+        margin-left: 4px
+
+    &.tiny
+      height: H = 22px
+      padding: 0 6px
+      font-size: FONT_SIZE_TINY
+      line-height: (H - 2)
+      & .icon + abbr
+        margin-left: 2px

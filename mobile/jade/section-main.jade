@@ -1,0 +1,47 @@
+section#section-home(data-transition='slide')
+  header
+    include nav-asidemenu
+    img.title.centered(src='img/matisse-logo-white.png')
+    nav.right
+      a.button(href='#btn-info', data-router='article', data-icon='info-sign')
+
+  article#article-home.active.scroll
+    .container.top
+    .container.welcome
+      h1 welcome to Matisse.
+      p.bold ready to <a href="#">launch</a> a project?
+      p.bold looking to <a href="#aside-main" data-router='aside'>fund</a> one?
+      p.bold we'll get you started. <a class='link-alt' href="#">learn more</a>
+      table.actions
+        tr
+          td.left
+            a.button.anchor(href='#', data-label='create account')
+          td.right
+            a.button.anchor(href='#', data-label='browse projects')
+        tr
+          td.left
+            p.text.bold.center for teachers
+          td.right
+            p.text.bold.center for funders
+    //- ul
+    //-   li.dark
+    //-     strong
+    //-       | A framework for developers who want to design, build and share cross device apps.
+    //-   li.feature(data-icon='brand html5')
+    //-     strong HTML5 Optimized Apps
+    //-     | Lungo Framework supports open web standards, such as HTML5, CSS3 and JavaScript. It brings consistent browser environment across mobiles, tvs and desktop devices.
+    //-   li.feature(data-icon='book')
+    //-     strong Powerfull JavaScript API
+    //-     | Each new line of code in Lungo is welcome, we hope that Developers and restless minds help us to improve day by day this humble project.
+    //-   li.feature(data-icon='brand branch')
+    //-     strong Multi-Device full support
+    //-     | Is known that create apps for each platform is expensive, this situation is increased by the arrival of tablets and SmartTVs. Lungo will suit all of them creating a unique and amazing UX.
+    //-   li.feature(data-icon='brand github-2')
+    //-     strong Open Source Project
+    //-     | Each new line of code in Lungo is welcome, we hope that Developers and restless minds help us to improve day by day this humble project.
+    //-   li
+    //-     a.button.anchor.theme(href='https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Flungo.tapquo.com%2F&text=@lungojs a framework for developers who want to design, build and share cross device apps', data-icon='brand twitter', target='_blank', data-label='Tweet me')
+  article#second-article.list
+    li.highlight
+      strong
+        | A framework for developers who want to design, build and share cross device apps.

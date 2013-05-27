@@ -1,0 +1,97 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Layout
+ * @class List
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+.list
+  & li
+    list-style-type: none
+    padding: LIST_PADDING LIST_PADDING_HORIZONTAL (LIST_PADDING - 1) LIST_PADDING_HORIZONTAL
+    position: relative
+
+    &, & a, & small, & .right
+      font-weight: 300
+
+    &.arrow::after
+      position: absolute
+      right: LIST_PADDING
+      top: 45%
+      width: 6px
+      height: 6px
+      content: ''
+      border-right: 3px solid
+      border-top: 3px solid
+      transform( rotate(45deg) )
+
+    & a
+      display: block
+      text-decoration: none
+
+    & img, .icon
+      float: left
+      line-height: 1.0em
+      text-align: center
+      margin-right: LIST_PADDING_HORIZONTAL
+
+    &:not(.thumb)
+      section & img, section & .icon
+        width: S = 34px
+        height: S
+        font-size: 2.6em
+      aside & img, aside & .icon
+        width: S = 18px
+        height: S
+        font-size: 1.3em
+
+    &.thumb
+      & img, & .icon
+        margin-top: -(LIST_PADDING)
+        margin-left: -(LIST_PADDING_HORIZONTAL)
+
+        height: S = 61px
+        width: S
+        font-size: 3.6em
+        line-height: 1.3em
+
+    &.anchor
+      padding: (LIST_PADDING_HORIZONTAL / 2) LIST_PADDING_HORIZONTAL
+      line-height: 1.0em
+      & .tag
+        display: none
+
+    & strong
+      position: relative
+      font-size: FONT_SIZE_BIG
+
+    & small
+      display: block
+      overflow: hidden
+      white-space: nowrap
+      text-overflow: ellipsis
+      & + .right
+        margin-left: 0px
+        margin-top: -12px
+
+    & small, &.anchor, & .right:not(.tag)
+      font-size: FONT_SIZE_SMALL
+
+  & .loading .right
+    font-size: 1.0em
+
+  & .right, small
+    & .icon
+      height: 13px !important
+      width: 13px !important
+      margin-right: 1px !important
+      font-size: 1.2em !important
+      line-height: 1.1em
+
+  &.indented li:not(:last-child)
+    margin-bottom: 10px
+
+
+

@@ -1,0 +1,77 @@
+body section article .container {
+  padding: 10px 15px;
+}
+body section article a {
+  color: #c00;
+  font-weight: bold;
+}
+body section article a.link-alt {
+  color: #0069ff;
+}
+body section article table.actions {
+  margin-top: 30px;
+  width: 100%;
+}
+body section article table.actions tr {
+  width: 100%;
+}
+body section article table.actions tr td {
+  width: 50%;
+}
+body section article table.actions tr td.left {
+  padding-right: 5px;
+}
+body section article table.actions tr td.right {
+  padding-left: 5px;
+}
+body section #article-home .container.top {
+  margin-top: 15px;
+  height: 200px;
+  background-image: url("/img/crayons.jpg");
+  background-repeat: no-repeat;
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+  body section #article-home .container.top {
+    background-image: url("/img/crayons@2x.jpg");
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    background-size: 100% auto;
+  }
+}
+body section #article-home .tinker {
+  font-family: "Open Sans";
+  padding: 15px 0 0 45px;
+  font-size: 3.1em;
+}
+body section #article-home .tinker sup {
+  font-size: 0.3em;
+  letter-spacing: 0.2em;
+  padding-left: 5px;
+}
+body section #article-home .welcome h1 {
+  font-size: 28px;
+  padding: 20px 0 20px 0;
+  font-weight: bold;
+}
+body section #article-home .welcome p {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: bold;
+  color: #989898;
+}
+body section #article-home .welcome .actions p {
+  font-size: 1.1em;
+  text-align: center;
+  color: #292929;
+}
+body label.large {
+  font-size: 1.2em;
+}
+body .top-search-holder {
+  padding: 5px 8px 0 8px;
+}
+body .top-search-holder #school-search {
+  font-size: 1.7em;
+  font-weight: bold;
+  border: solid 2px;
+}

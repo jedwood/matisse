@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Matisse</title>
+    <meta name="description" content="community helping students get the art supplies they need to tinker build and grow">
+    <meta name="author" content="Jed Wood (@silentrant)">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+    <link href="http://cdn.tapquo.com/lungo/icon-57.png" sizes="57x57" rel="apple-touch-icon">
+    <link href="http://cdn.tapquo.com/lungo/startup-image-320x460.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+    <link href="http://cdn.tapquo.com/lungo/icon-114.png" sizes="114x114" rel="apple-touch-icon">
+    <link href="http://cdn.tapquo.com/lungo/startup-image-640x920.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+    <link href="http://cdn.tapquo.com/lungo/startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+    <link href="http://cdn.tapquo.com/lungo/icon-72.png" sizes="72x72" rel="apple-touch-icon">
+    <link href="http://cdn.tapquo.com/lungo/startup-image-768x1004.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+    <link href="http://cdn.tapquo.com/lungo/startup-image-748x1024.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+    <link href="http://cdn.tapquo.com/lungo/icon-144.png" sizes="144x144" rel="apple-touch-icon">
+    <link href="http://cdn.tapquo.com/lungo/startup-image-1536x2008.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+    <link href="http://cdn.tapquo.com/lungo/startup-image-1496x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+    <link rel="stylesheet" href="css/lungo.css">
+    <link rel="stylesheet" href="css/matisse.css">
+  </head>
+  <body class="app">
+    <section id="section-home" data-transition="slide">
+      <header>
+        <nav class="left"><a href="#aside-main" data-router="aside" data-icon="menu"></a></nav><img src="img/matisse-logo-white.png" class="title centered">
+        <nav class="right"><a href="#btn-info" data-router="article" data-icon="info-sign" class="button"></a></nav>
+      </header>
+      <article id="article-home" class="active scroll">
+        <div class="container top"></div>
+        <div class="container welcome">
+          <h1>welcome to Matisse.</h1>
+          <p class="bold">ready to <a href="#">launch</a> a project?</p>
+          <p class="bold">looking to <a href="#aside-main" data-router='aside'>fund</a> one?</p>
+          <p class="bold">we'll get you started. <a class='link-alt' href="#">learn more</a></p>
+          <table class="actions">
+            <tr>
+              <td class="left"><a href="#" data-label="create account" class="button anchor"></a></td>
+              <td class="right"><a href="#" data-label="browse projects" class="button anchor"></a></td>
+            </tr>
+            <tr>
+              <td class="left">
+                <p class="text bold center">for teachers</p>
+              </td>
+              <td class="right">
+                <p class="text bold center">for funders</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </article>
+      <article id="second-article" class="list">
+        <li class="highlight"><strong>A framework for developers who want to design, build and share cross device apps.</strong></li>
+      </article>
+    </section>
+    <section id="section-classrooms" data-transition="slide">
+      <header data-title="Classrooms" class="extended">
+        <nav class="left"><a href="#aside-main" data-router="aside" data-icon="menu"></a></nav>
+      </header>
+      <article id="article-schools-list" class="active scroll list">
+        <form id="school-search-form">
+          <fieldset class="top-search-holder">
+            <label class="large">find schools:</label>
+            <input id="school-search" type="search" placeholder="name or zip code...">
+          </fieldset>
+        </form>
+        <ul id="school-list"></ul>
+      </article>
+    </section>
+    <aside id="aside-main">
+      <header data-title=""></header>
+      <article class="active list">
+        <ul>
+          <li class="active"><a href="#section-home" data-router="section"><strong>Home</strong></a></li>
+          <li><a href="#section-classrooms" data-router="section"><strong>Classrooms</strong></a></li>
+        </ul>
+      </article>
+    </aside>
+    <script src="js/quo.js"></script>
+    <script src="js/lungo.old.js"></script>
+    <script src="js/matisse.js"></script>
+    <script src="js/retina.js"></script>
+  </body>
+</html>

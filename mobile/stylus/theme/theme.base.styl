@@ -1,0 +1,31 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Theme
+ * @class Base
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+body
+  background-color: #000
+  color: COLOR
+  font-family: "Helvetica Neue", Helvetica, "Open Sans", Arial, sans-serif
+  font-size: 13px
+  line-height: 1.3em
+  letter-spacing: -0.05em
+
+  & .text
+    &.ultralight
+      font-weight: 100
+    &.thin
+      font-weight: 300
+    &.normal
+      font-weight: 400
+    &.bold
+      font-weight: 700
+
+  & .theme
+    background-color: THEME-light
+    &:active
+      background-color: THEME

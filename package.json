@@ -6,6 +6,17 @@
   "scripts": {
     "test": "make test"
   },
+  "dependencies": {
+    "nib": "~0.9.1",
+    "stylus": "~0.32.1",
+    "jade": "~0.30.0",
+    "express": "~3.2.5",
+    "mongoose": "~3.6.11",
+    "nconf": "~0.6.7",
+    "request": "~2.21.0",
+    "xml2js": "~0.2.7"
+  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "file://$HOME/Dropbox/gitrepos/matisse.git"
