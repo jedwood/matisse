@@ -9,7 +9,7 @@ app.set('view engine', 'jade');
 // ROUTES
 
 app.get('/find-schools', function(req, res) {
-  var zip = req.query.zip || false
+  var zip = req.query.zip || false;
   if (!zip) {
     if (req.query.lat && req.query.long) {
       services.zipByCoords(req.query.lat, req.query.long, function(err, zip) {
@@ -22,7 +22,13 @@ app.get('/find-schools', function(req, res) {
   } else {
     schoolsByZip(zip, res);
   }
-})
+});
+
+
+app.get('/classrooms', function(req, res) {
+  //TODO change depending on whether user is logged in
+  res.render('funder');
+});
 
 
 // HELPERS

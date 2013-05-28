@@ -25,8 +25,8 @@ block content
           for school in schools
             li
               a(href='/index.html?school=' + school.name)
-                h2= school.name
-                p= school.address
+                h2.school-name= school.name
+                p.school-address= school.address
 
       else
         p.instructions Enter your school's zip code above&nbsp;

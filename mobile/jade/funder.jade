@@ -1,0 +1,16 @@
+extends layout
+block content
+  #home(data-role='page', data-dom-cache='false')
+    include sidemenu
+    div(data-role='header', data-position='fixed')
+      img.ui-title(src='img/matisse-logo-white.png')
+      a.ui-icon-nodisc.big-icon(href='#sidemenu', data-icon='reorder', data-iconpos='notext', data-shadow='false', data-iconshadow='false') Menu
+    div(data-role='content')
+      .fundertop.fullbleedlr
+        h2 welcome
+        h1 funder!
+        p.bold
+          a(href='#') see projects I'm supporting
+        p.bold
+          a(href='#') find classrooms to help
+

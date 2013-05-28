@@ -12,6 +12,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="cleartype" content="on">
     <link rel="stylesheet" href="css/jquery.mobile.flatui.min.css">
+    <link rel="stylesheet" href="css/jqm-icon-pack-3.0.0-fa.css">
     <link rel="stylesheet" href="css/fontawesome-custom.css">
     <link rel="stylesheet" href="css/matisse.css">
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -22,21 +23,21 @@
     <div id="home" data-role="page" data-dom-cache="true">
       <div id="sidemenu" data-role="panel" data-theme="a" data-position-fixed="true">
         <ul data-role="listview" data-theme="a" class="left-icons">
-          <li data-icon="false"><a href="/"><span class="ui-icon ui-icon-home"></span>Home</a></li>
-          <li data-icon="false"><a href="/"><span class="ui-icon ui-icon-cut"></span>Classrooms</a></li>
-          <li data-icon="false"><a href="/"><span class="ui-icon ui-icon-lightbulb"></span>Project Ideas</a></li>
-          <li data-icon="false"><a href="/"><span class="ui-icon ui-icon-cog"></span>My Account</a></li>
-          <li data-icon="false"><a href="/"><span class="ui-icon ui-icon-info-sign"></span>About Matisse</a></li>
-          <li data-icon="false"><a href="/"><span class="ui-icon ui-icon-bullhorn"></span>Give Feedback</a></li>
+          <li data-icon="false"><a href="/" data-transition="slide"><span class="ui-icon ui-icon-home"></span>Home</a></li>
+          <li data-icon="false"><a href="/classrooms" data-transition="slide"><span class="ui-icon ui-icon-gift"></span>Help a Classroom</a></li>
+          <li data-icon="false"><a href="/projects" data-transition="slide"><span class="ui-icon ui-icon-lightbulb"></span>Project Ideas</a></li>
+          <li data-icon="false"><a href="/account" data-transition="slide"><span class="ui-icon ui-icon-cog"></span>My Account</a></li>
+          <li data-icon="false"><a href="/about" data-transition="slide"><span class="ui-icon ui-icon-info-sign"></span>About Matisse</a></li>
+          <li data-icon="false"><a href="/feedback" data-transition="slide"><span class="ui-icon ui-icon-bullhorn"></span>Give Feedback</a></li>
         </ul>
       </div>
       <div data-role="header" data-position="fixed"><img src="img/matisse-logo-white.png" class="ui-title"><a href="#sidemenu" data-icon="reorder" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc big-icon">Menu</a></div>
       <div data-role="content">
-        <div class="splashtop fullbleed"></div>
+        <div class="splashtop fullbleedlr"></div>
         <div class="welcome">
           <h1>welcome to Matisse.</h1>
-          <p class="bold">ready to <a class='alt-link' href='/find-schools'>launch</a> a project?</p>
-          <p class="bold">looking to <a class='alt-link' href='#aside-main' data-router='aside'>fund</a> one?</p>
+          <p class="bold">ready to <a class='alt-link' href='/find-schools' data-transition='slideup'>launch</a> a project?</p>
+          <p class="bold">looking to <a class='alt-link' href='/classrooms'>fund</a> one?</p>
           <p class="bold">we'll get you started. <a class='link-alt' href='#'>learn more</a></p>
         </div>
         <div class="actions ui-grid-a fullbleed">
