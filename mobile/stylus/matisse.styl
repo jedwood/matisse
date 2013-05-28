@@ -1,11 +1,28 @@
 @import 'nib'
 @import 'mixins'
 
+.hide
+  display none
+
 h1
   color #000
 
 .fullbleed
   margin 0px -15px
+
+a.alt-link
+  color #cc0000
+
+ul.ui-listview
+  li
+    &.ui-btn
+      .ui-btn-inner
+        .ui-btn-text
+          a
+            text-decoration none
+    &.ui-btn-down-d, &.ui-btn-up-d, &.ui-btn-hover-d
+      border-bottom solid 1px #111111
+      border-top solid 1px #666666
 
 .splashtop
   mt 15px
@@ -14,8 +31,6 @@ h1
   background-repeat no-repeat
 
 .welcome
-  a.alt-link
-    color #cc0000
   h1
     fs 28px
   p
@@ -31,13 +46,6 @@ h1
     fw bold
     margin 0
     color #292929
-
-.top-search-holder
-  padding 5px 8px 0 8px
-  #school-search
-    fs 1.7em
-    fw bold
-    border solid 2px
 
 .btn-shadow
   box-shadow 0px 2px 1px #ccc
@@ -67,11 +75,16 @@ h1
       fs 2.5em
       pt 5px
 
-.form-search-schools
+
+#form-search-schools
   ml 50px
   mr 10px
   .ui-icon:not(.ui-icon-loading), .ui-icon-searchfield::after
     background rgba(0,0,0,.6)
   .ui-input-search
     border none
+
+.instructions
+  color #555
+  fs 2em
 

@@ -1,8 +1,23 @@
+.hide {
+  display: none;
+}
 h1 {
   color: #000;
 }
 .fullbleed {
   margin: 0px -15px;
+}
+a.alt-link {
+  color: #c00;
+}
+ul.ui-listview li.ui-btn .ui-btn-inner .ui-btn-text a {
+  text-decoration: none;
+}
+ul.ui-listview li.ui-btn-down-d,
+ul.ui-listview li.ui-btn-up-d,
+ul.ui-listview li.ui-btn-hover-d {
+  border-bottom: solid 1px #111;
+  border-top: solid 1px #666;
 }
 .splashtop {
   margin-top: 15px;
@@ -17,9 +32,6 @@ h1 {
     -moz-background-size: 100% auto;
     background-size: 100% auto;
   }
-}
-.welcome a.alt-link {
-  color: #c00;
 }
 .welcome h1 {
   font-size: 28px;
@@ -36,14 +48,6 @@ h1 {
   font-weight: bold;
   margin: 0;
   color: #292929;
-}
-.top-search-holder {
-  padding: 5px 8px 0 8px;
-}
-.top-search-holder #school-search {
-  font-size: 1.7em;
-  font-weight: bold;
-  border: solid 2px;
 }
 .btn-shadow {
   -webkit-box-shadow: 0px 2px 1px #ccc;
@@ -77,14 +81,18 @@ h1 {
   font-size: 2.5em;
   padding-top: 5px;
 }
-.form-search-schools {
+#form-search-schools {
   margin-left: 50px;
   margin-right: 10px;
 }
-.form-search-schools .ui-icon:not(.ui-icon-loading),
-.form-search-schools .ui-icon-searchfield::after {
+#form-search-schools .ui-icon:not(.ui-icon-loading),
+#form-search-schools .ui-icon-searchfield::after {
   background: rgba(0,0,0,0.6);
 }
-.form-search-schools .ui-input-search {
+#form-search-schools .ui-input-search {
   border: none;
+}
+.instructions {
+  color: #555;
+  font-size: 2em;
 }

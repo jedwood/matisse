@@ -3,9 +3,11 @@ block content
   #schools(data-role='page')
     include sidemenu
     div(data-role='header', data-position='fixed')
-      form.form-search-schools
-        input#search-schools.search-box(type='number', name='zip', data-theme='c', value='', placeholder='zip code')= zip
-        a(data-role='submit', data-inline="true")GO
+      form#form-search-schools
+        input#search-schools.search-box(type='search', name='zip', data-theme='c', value=zip, placeholder='zip code')
+        input#schools-lat(type='hidden', name='lat', value='')
+        input#schools-long(type='hidden', name='long', value='')
+        //-a(data-role='submit', data-inline="true")GO
       //- h1 Find Your School
       //- .segmented-control.ui-bar-d
       //-   fieldset(data-role='controlgroup', data-type='horizontal', data-mini='true')
@@ -14,10 +16,56 @@ block content
       //-     input#map-switch(type='radio', name='switch')
       //-     label(for='map-switch') Map
       a.ui-icon-nodisc.big-icon(href='#sidemenu', data-icon='reorder', data-iconpos='notext', data-shadow='false', data-iconshadow='false') Menu
-      //- a(href='#', data-theme='c') GO
-    if (zip)
-      div(data-role='content')
-        p= schools
-      //- see http://view.jquerymobile.com/master/demos/examples/maps/list-toggle.php for example
+
+    //- see http://view.jquerymobile.com/master/demos/examples/maps/list-toggle.php for example
+    div(data-role='content')
+
+      if (zip)
+        ul(data-role='listview', data-theme='d', data-inset='false')
+          for school in schools
+            li
+              a(href='/index.html?school=' + school.name)
+                h2= school.name
+                p= school.address
+
+      else
+        p.instructions Enter your school's zip code above&nbsp;
+          span#nearby-schools-container.hide
+            a#btn-nearby-schools.alt-link(href="#") or search nearby.
+
+        script
+          (function(){
+
+            $('#form-search-schools').submit(function(event) {
+              $('#search-schools').blur();
+            });
+
+            var Geo={};
+
+            if (navigator.geolocation) {
+              console.log("oh we have geolocation!");
+              $('#nearby-schools-container').removeClass('hide');
+            }
+
+            $('#btn-nearby-schools').tap(function(event) {
+              navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+              $('.instructions').addClass('hide');
+              $.mobile.loading('show');
+            });
+
+            //Get the latitude and the longitude;
+            function geoSuccess(position) {
+              Geo.lat = position.coords.latitude;
+              Geo.lng = position.coords.longitude;
+              $('#search-schools').val('');
+              $('#schools-lat').val(Geo.lat);
+              $('#schools-long').val(Geo.lng);
+              $('#form-search-schools').submit();
+            }
+
+            function geoError(){
+              console.log("Geocoder failed");
+            }
+          }());
 
 

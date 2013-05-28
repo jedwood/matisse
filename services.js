@@ -23,6 +23,18 @@ module.exports = {
           cb(null, schools);
         });
     })
+  },
+
+  zipByCoords: function(lat, long, cb) {
+    request('http://query.yahooapis.com/v1/public/yql/limechile/zip-by-coords?latlong=' + lat + "," + long + '&_maxage=60480&format=json',
+      function(error, response, body) {
+        var json = JSON.parse(body);
+        console.log(json.query.results.Result);
+        if (error) return cb(error)
+        if (!json.query.results) return cb("error");
+        cb(null, json.query.results.Result.uzip);
+      }
+    );
   }
 
 }
