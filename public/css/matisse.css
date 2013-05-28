@@ -1,77 +1,90 @@
-body section article .container {
-  padding: 10px 15px;
+h1 {
+  color: #000;
 }
-body section article a {
-  color: #c00;
-  font-weight: bold;
+.fullbleed {
+  margin: 0px -15px;
 }
-body section article a.link-alt {
-  color: #0069ff;
-}
-body section article table.actions {
-  margin-top: 30px;
-  width: 100%;
-}
-body section article table.actions tr {
-  width: 100%;
-}
-body section article table.actions tr td {
-  width: 50%;
-}
-body section article table.actions tr td.left {
-  padding-right: 5px;
-}
-body section article table.actions tr td.right {
-  padding-left: 5px;
-}
-body section #article-home .container.top {
+.splashtop {
   margin-top: 15px;
   height: 200px;
   background-image: url("/img/crayons.jpg");
   background-repeat: no-repeat;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
-  body section #article-home .container.top {
+  .splashtop {
     background-image: url("/img/crayons@2x.jpg");
     -webkit-background-size: 100% auto;
     -moz-background-size: 100% auto;
     background-size: 100% auto;
   }
 }
-body section #article-home .tinker {
-  font-family: "Open Sans";
-  padding: 15px 0 0 45px;
-  font-size: 3.1em;
+.welcome a.alt-link {
+  color: #c00;
 }
-body section #article-home .tinker sup {
-  font-size: 0.3em;
-  letter-spacing: 0.2em;
-  padding-left: 5px;
-}
-body section #article-home .welcome h1 {
+.welcome h1 {
   font-size: 28px;
-  padding: 20px 0 20px 0;
-  font-weight: bold;
 }
-body section #article-home .welcome p {
+.welcome p {
   font-size: 18px;
-  line-height: 28px;
+  line-height: 12px;
   font-weight: bold;
   color: #989898;
 }
-body section #article-home .welcome .actions p {
-  font-size: 1.1em;
+.actions p {
+  font-size: 0.8em;
   text-align: center;
+  font-weight: bold;
+  margin: 0;
   color: #292929;
 }
-body label.large {
-  font-size: 1.2em;
-}
-body .top-search-holder {
+.top-search-holder {
   padding: 5px 8px 0 8px;
 }
-body .top-search-holder #school-search {
+.top-search-holder #school-search {
   font-size: 1.7em;
   font-weight: bold;
   border: solid 2px;
+}
+.btn-shadow {
+  -webkit-box-shadow: 0px 2px 1px #ccc;
+  box-shadow: 0px 2px 1px #ccc;
+}
+.ui-bar-a {
+  -webkit-box-shadow: 0px 1px 3px #333;
+  box-shadow: 0px 1px 3px #333;
+}
+#sidemenu ul li {
+  border-bottom: solid 1px #a00;
+  border-top: solid 1px #dc3737;
+}
+#sidemenu ul li a {
+  font-size: 1.2em;
+  text-decoration: none;
+}
+.ui-icon:not(.ui-icon-loading),
+.ui-icon-searchfield::after {
+  background: none;
+}
+.big-icon.ui-btn-icon-notext {
+  width: 36px;
+  height: 36px;
+}
+.big-icon .ui-btn-inner {
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.big-icon .ui-btn-inner .ui-icon {
+  font-size: 2.5em;
+  padding-top: 5px;
+}
+.form-search-schools {
+  margin-left: 50px;
+  margin-right: 10px;
+}
+.form-search-schools .ui-icon:not(.ui-icon-loading),
+.form-search-schools .ui-icon-searchfield::after {
+  background: rgba(0,0,0,0.6);
+}
+.form-search-schools .ui-input-search {
+  border: none;
 }

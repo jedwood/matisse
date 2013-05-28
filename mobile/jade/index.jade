@@ -1,10 +1,26 @@
-!!! 5
-html
-  include head
+extends layout
+block content
+  #home(data-role='page', data-dom-cache='true')
+    include sidemenu
+    div(data-role='header', data-position='fixed')
+      img.ui-title(src='img/matisse-logo-white.png')
+      a.ui-icon-nodisc.big-icon(href='#sidemenu', data-icon='reorder', data-iconpos='notext', data-shadow='false', data-iconshadow='false') Menu
+    div(data-role='content')
+      .splashtop.fullbleed
+      .welcome
+        h1 welcome to Matisse.
+        p.bold ready to <a class='alt-link' href='/find-schools'>launch</a> a project?
+        p.bold looking to <a class='alt-link' href='#aside-main' data-router='aside'>fund</a> one?
+        p.bold we'll get you started. <a class='link-alt' href='#'>learn more</a>
+      .actions.ui-grid-a.fullbleed
+        .ui-block-a
+          a.btn-shadow(href='/find-schools', data-role='button') create account
+        .ui-block-b
+          a.btn-shadow(href='#', data-role='button') browse projects
+        .ui-block-a
+          p.bold.center for teachers
+        .ui-block-b
+          p.bold.center for funders
 
-  body.app
-    include section-main
-    include section-classrooms
-    include aside-main
-
-    include foot
+    //- div(data-role='footer')
+    //-   h4 Page Footer

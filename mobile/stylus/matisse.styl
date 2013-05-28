@@ -1,69 +1,77 @@
 @import 'nib'
 @import 'mixins'
 
-body
-  section
+h1
+  color #000
 
-    article
-      .container
-        padding 10px 15px
+.fullbleed
+  margin 0px -15px
+
+.splashtop
+  mt 15px
+  height 200px
+  image '/img/crayons.jpg' 100% auto
+  background-repeat no-repeat
+
+.welcome
+  a.alt-link
+    color #cc0000
+  h1
+    fs 28px
+  p
+    font-size 18px
+    line-height 12px
+    fw bold
+    color #989898
+
+.actions
+  p
+    fs .8em
+    text-align center
+    fw bold
+    margin 0
+    color #292929
+
+.top-search-holder
+  padding 5px 8px 0 8px
+  #school-search
+    fs 1.7em
+    fw bold
+    border solid 2px
+
+.btn-shadow
+  box-shadow 0px 2px 1px #ccc
+
+.ui-bar-a
+  box-shadow 0px 1px 3px #333
+
+#sidemenu
+  ul
+    li
+      border-bottom solid 1px #aa0000
+      border-top solid 1px #dc3737
       a
-        color #cc0000
-        fw bold
-        &.link-alt
-          color #0069ff
+        fs 1.2em
+        text-decoration none
 
-      table.actions
-        mt 30px
-        width 100%
-        tr
-          width 100%
-          td
-            width 50%
-            &.left
-              pr 5px
-            &.right
-              pl 5px
+.ui-icon:not(.ui-icon-loading), .ui-icon-searchfield::after
+  background none
 
+.big-icon
+  &.ui-btn-icon-notext
+    width 36px
+    height 36px
+  .ui-btn-inner
+    border-radius 0px
+    .ui-icon
+      fs 2.5em
+      pt 5px
 
-
-    #article-home
-      .container.top
-        mt 15px
-        height 200px
-        image '/img/crayons.jpg' 100% auto
-        background-repeat no-repeat
-      .tinker
-        font-family "Open Sans"
-        padding 15px 0 0 45px
-        fs 3.1em
-        sup
-          fs .3em
-          letter-spacing .2em
-          pl 5px
-      .welcome
-        h1
-          fs 28px
-          padding 20px 0 20px 0
-          fw bold
-        p
-          font-size 18px
-          line-height 28px
-          fw bold
-          color #989898
-        .actions
-          p
-            fs 1.1em
-            text-align center
-            color #292929
-
-  label.large
-    fs 1.2em
-
-  .top-search-holder
-    padding 5px 8px 0 8px
-    #school-search
-      fs 1.7em
-      fw bold
-      border solid 2px
+.form-search-schools
+  ml 50px
+  mr 10px
+  .ui-icon:not(.ui-icon-loading), .ui-icon-searchfield::after
+    background rgba(0,0,0,.6)
+  .ui-input-search
+    border none
 

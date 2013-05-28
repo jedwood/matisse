@@ -6,25 +6,11 @@ module.exports = function(grunt) {
       endpoint: "public"
     },
     source : {
-      lungostylus: [
-        'mobile/stylus/lungo.base.styl',
-        'mobile/stylus/lungo.layout.styl',
-        'mobile/stylus/lungo.layout.*.styl',
-        'mobile/stylus/lungo.widget.styl',
-        'mobile/stylus/lungo.widget.*.styl',
-        'mobile/stylus/lungo.media.*.styl',
-        'mobile/stylus/theme/theme.*.styl',
-        'mobile/stylus/lungo.icon**.styl'
-      ],
       matissestylus: [
         'mobile/stylus/matisse.styl'
       ]
     },
     stylus: {
-      lungo: {
-        options: { compress: true, import: [ '__init']},
-        files: {'<%=meta.endpoint%>/css/lungo.css': '<%=source.lungostylus%>'}
-      },
       matisse: {
         options: {compress: false},
         files: {'<%=meta.endpoint%>/css/matisse.css': '<%=source.matissestylus%>'}
@@ -44,13 +30,6 @@ module.exports = function(grunt) {
       html: {
         files: '**/*.jade',
         tasks: ['jade'],
-        options: {
-          interrupt: true
-        }
-      },
-      lungocss: {
-        files: ['<%= source.lungostylus %>', 'mobile/stylus/theme/__init.styl', 'mobile/stylus/__init.styl'],
-        tasks: ["stylus:lungo"],
         options: {
           interrupt: true
         }

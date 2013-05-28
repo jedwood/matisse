@@ -1,0 +1,3 @@
+[submodule "jquery-mobile-flat-ui-theme"]
+	path = jquery-mobile-flat-ui-theme
+	url = git@github.com:jedwood/jquery-mobile-flat-ui-theme.git
