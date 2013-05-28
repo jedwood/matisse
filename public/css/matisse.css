@@ -57,12 +57,20 @@ ul.ui-listview li.ui-btn-hover-d {
   -webkit-box-shadow: 0px 1px 3px #333;
   box-shadow: 0px 1px 3px #333;
 }
+ul.left-icons li.ui-btn .ui-btn-inner .ui-icon {
+  font-size: 1.3em;
+  width: 40px;
+  display: inline-block;
+}
 #sidemenu ul li {
   border-bottom: solid 1px #a00;
   border-top: solid 1px #dc3737;
 }
 #sidemenu ul li a {
-  font-size: 1.2em;
+  font-size: 1.1em;
+  padding-top: 18px;
+  padding-top: 18px;
+  font-weight: 300;
   text-decoration: none;
 }
 .ui-icon:not(.ui-icon-loading),
@@ -78,7 +86,7 @@ ul.ui-listview li.ui-btn-hover-d {
   border-radius: 0px;
 }
 .big-icon .ui-btn-inner .ui-icon {
-  font-size: 2.5em;
+  font-size: 2em;
   padding-top: 5px;
 }
 #form-search-schools {

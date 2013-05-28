@@ -1,0 +1,107 @@
+/*  Font Awesome 3.0
+    the iconic font designed for use with Twitter Bootstrap
+    -------------------------------------------------------
+    The full suite of pictographic icons, examples, and documentation
+    can be found at: http://fortawesome.github.com/Font-Awesome/
+
+    License
+    -------------------------------------------------------
+    • The Font Awesome font is licensed under the SIL Open Font License - http://scripts.sil.org/OFL
+    • Font Awesome CSS, LESS, and SASS files are licensed under the MIT License -
+      http://opensource.org/licenses/mit-license.html
+    • The Font Awesome pictograms are licensed under the CC BY 3.0 License - http://creativecommons.org/licenses/by/3.0/
+    • Attribution is no longer required in Font Awesome 3.0, but much appreciated:
+      "Font Awesome by Dave Gandy - http://fortawesome.github.com/Font-Awesome"
+
+    Contact
+    -------------------------------------------------------
+    Email: dave@davegandy.com
+    Twitter: http://twitter.com/fortaweso_me
+    Work: Lead Product Designer @ http://kyruus.com */
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fonts/fontawesome-webfont.woff') format('woff'),
+    url('fonts/fontawesome-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.ui-icon {
+  background-image: none;
+  width: 20px;
+  height: 20px;
+}
+
+/*  Font Awesome styles
+    ------------------------------------------------------- */
+[class^="ui-icon-"]:before,[class*=" ui-icon-"]:before {
+  font-family:FontAwesome!important;
+  font-weight:400;
+  font-style:normal;
+  display:inline-block;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  display: inline;
+  width: auto;
+  height: auto;
+  line-height: normal;
+  vertical-align: baseline;
+  background-image: none !important;
+  background-position: 0% 0%;
+  background-repeat: repeat;
+}
+/* makes sure icons active on rollover in links */
+a [class^="icon-"],
+a [class*=" icon-"] {
+  display: inline-block;
+}
+.ui-icon-search:before { content: "\f002"; margin-top: 1px; margin-left: 2px; }
+.ui-icon-envelope:before { content: "\f003"; margin-top: 1px; margin-left: 2px; }
+.ui-icon-heart:before { content: "\f004"; margin-top: 2px; margin-left: 2px; }
+.ui-icon-star:before { content: "\f005"; margin-top: 2px; margin-left: 2px; }
+.ui-icon-star-empty:before { content: "\f006"; margin-top: 2px; margin-left: 2px; }
+.ui-icon-user:before { content: "\f007"; margin-top: 1px; margin-left: 2px; }
+.ui-icon-ok:before { content: "\f00c"; margin-top: 1px; margin-left: 2px; }
+.ui-icon-remove:before { content: "\f00d"; margin-top: 1px; margin-left: 3px; }
+.ui-icon-cog:before { content: "\f013"; margin-top: 1px; margin-left: 3px; }
+.ui-icon-home:before { content: "\f015"; margin-top: 1px; margin-left: 2px; }
+.ui-icon-time:before { content: "\f017"; margin-top: 2px; margin-left: 3px; }
+.ui-icon-play-circle:before { content: "\f01d"; margin-top: 2px; margin-left: 3px; }
+.ui-icon-flag:before { content: "\f024"; margin-top: 2px; margin-left: 2px; }
+.ui-icon-book:before { content: "\f02d"; margin-top: 1px; margin-left: 2px; }
+.ui-icon-bookmark:before { content: "\f02e"; margin-top: 2px; margin-left: 2px; }
+.ui-icon-camera:before { content: "\f030"; margin-top: 2px; margin-left: 1px; }
+.ui-icon-facetime-video:before { content: "\f03d"; margin-top: 2px; margin-left: 1px; }
+.ui-icon-pencil:before { content: "\f040"; margin-top: 2px; margin-left: 3px; }
+.ui-icon-share:before { content: "\f045"; margin-top: 3px; margin-left: 3px; }
+.ui-icon-chevron-left:before { content: "\f053"; margin-top: 2px; margin-left: 1px; }
+.ui-icon-chevron-right:before { content: "\f054"; margin-top: 2px; margin-left: 3px; }
+.ui-icon-plus-sign:before { content: "\f055"; margin-top: 2px; margin-left: 3px; }
+.ui-icon-minus-sign:before { content: "\f056"; margin-top: 2px; margin-left: 3px; }
+.ui-icon-remove-sign:before { content: "\f057"; margin-top: 2px; margin-left: 3px; }
+.ui-icon-ok-sign:before { content: "\f058"; margin-top: 2px; margin-left: 3px; }
+.ui-icon-question-sign:before { content: "\f059"; margin-top: 2px; margin-left: 3px; }
+.ui-icon-info-sign:before { content: "\f05a"; margin-top: 2px; margin-left: 3px; }
+.ui-icon-asterisk:before { content: "\f069"; margin-top: 2px; margin-left: 2px; }
+.ui-icon-exclamation-sign:before { content: "\f06a"; margin-top: 2px; margin-left: 3px; }
+.ui-icon-gift:before { content: "\f06b"; margin-top: 2px; margin-left: 3px; }
+.ui-icon-shopping-cart:before { content: "\f07a"; margin-top: 2px; margin-left: 2px; }
+.ui-icon-thumbs-up:before { content: "\f087"; margin-top: 2px; margin-left: 3px; }
+.ui-icon-pushpin:before { content: "\f08d"; margin-top: 2px; margin-left: 2px; }
+.ui-icon-trophy:before { content: "\f091"; margin-top: 2px; margin-left: 2px; }
+.ui-icon-phone-sign:before { content: "\f098"; margin-top: 2px; margin-left: 3px; }
+.ui-icon-credit-card:before { content: "\f09d"; margin-top: 2px; margin-left: 1px; }
+.ui-icon-bullhorn:before { content: "\f0a1"; margin-top: 2px; margin-left: 1px; }
+.ui-icon-group:before { content: "\f0c0"; margin-top: 2px; margin-left: 1px; }
+.ui-icon-link:before { content: "\f0c1"; margin-top: 2px; margin-left: 2px; }
+.ui-icon-cut:before { content: "\f0c4"; margin-top: 1px; margin-left: 2px; }
+.ui-icon-reorder:before { content: "\f0c9"; margin-top: 2px; margin-left: 3px; }
+.ui-icon-comment-alt:before { content: "\f0e5"; margin-top: 1px; margin-left: 2px; }
+.ui-icon-comments-alt:before { content: "\f0e6"; margin-top: 1px; margin-left: 2px; }
+.ui-icon-lightbulb:before { content: "\f0eb"; margin-top: 2px; margin-left: 3px; }
