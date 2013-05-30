@@ -135,11 +135,11 @@ ul.left-icons li.ui-btn .ui-btn-inner .ui-icon {
   width: 40px;
   display: inline-block;
 }
-#sidemenu ul li {
+.sidemenu ul li {
   border-bottom: solid 1px #a00;
   border-top: solid 1px #dc3737;
 }
-#sidemenu ul li a {
+.sidemenu ul li a {
   font-size: 1.1em;
   padding-top: 18px;
   padding-top: 18px;

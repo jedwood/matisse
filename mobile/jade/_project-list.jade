@@ -1,7 +1,7 @@
 ul.project-list(data-role='listview', data-inset='false', data-theme='e')
   for p in projects
     li(data-icon='chevron-right')
-      a(href='/projects/' + p.id)
+      a(href='/projects/' + p.id, data-transition='slide', data-prefetch)
         img(src='/img/projects/' + p.smallImage)
         h5= p.name
           //- span.project project
