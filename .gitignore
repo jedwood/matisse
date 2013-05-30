@@ -1,3 +1,4 @@
-node_modules
+jquery-mobile-flat-ui-theme/
+node_modules/
 npm-debug.log
 config.json
