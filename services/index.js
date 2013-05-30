@@ -1,5 +1,8 @@
 var request  = require('request'),
+    config   = require('nconf'),
     xml2js   = require('xml2js');
+
+config.argv().env().file({ file: './config.json' });
 
 var services = module.exports = {
 
@@ -35,6 +38,15 @@ var services = module.exports = {
         if (error) return cb(error)
         if (!json.query.results) return cb("error");
         cb(null, json.query.results.Result.uzip);
+      }
+    );
+  },
+
+  products: function(id, cb) {
+    request({url:'https://api.target.com/v2/items/' + id + '?key=' + config.get('TARGETAPIKEY') + '&ResponseGroups=ItemAttributes,Images,OfferSummary',
+            json: true},
+      function(error, response, body) {
+        cb(null, body);
       }
     );
   },

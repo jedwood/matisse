@@ -4,3 +4,4 @@ var mongoose  = require('mongoose');
 exports.Person  = mongoose.model('Person', require('./person'));
 exports.Project = mongoose.model('Project', require('./project'));
 exports.School = mongoose.model('School', require('./school'));
+exports.Product = mongoose.model('Product', require('./product'));

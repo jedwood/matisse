@@ -25,6 +25,20 @@ app.get('/find-schools', function(req, res) {
   }
 });
 
+app.get('/products/:ID', function(req, res) {
+  productById(req.param('ID'), res);
+});
+
+app.get('/projects/:ID', function(req, res) {
+  models.Project.findById(req.param('ID')).populate('teacher school').exec(function(err, proj){
+    if (err) return res.status(500).send(err);
+    //TODO make this legit
+    models.Product.find({}, function(err, prods) {
+      if (err) return res.status(500).send(err);
+      res.render('project-detail', {proj:proj, prods:prods});
+    });
+  });
+});
 
 app.get('/projects', function(req, res) {
   models.Project.find({}).populate('teacher school').exec(function(err, projects){
@@ -84,6 +98,34 @@ function schoolsByZip(zip, res) {
         });
       });
       res.render('find-schools', {zip: zip, schools: schoolRes});
+    });
+
+  });
+}
+
+function productById(pid, res) {
+  console.log("Going to fetch this product: " + pid);
+  models.Product.findOne({targetID:pid}, function(err, prod) {
+    if (err) return res.status(500).send(err);
+    if (prod) return res.send({prod: prod});
+
+    services.products(pid, function(err, prodRes) {
+      console.log("Here is the product for " + pid);
+      console.log(prodRes);
+      var item = prodRes.ItemLookupResponse.Items.Item
+      if (err) return res.status(500).send(err);
+      var newP = new models.Product();
+      newP.targetID = pid;
+      newP.title = item.ItemAttributes.Title;
+      newP.description = item.Description;
+      newP.link = item.DetailPageURL;
+      newP.price = item.OfferSummary.LowestNewPrice.FormattedPrice;
+      newP.image = item.Images.ImageURLPattern;
+      newP.save(function(err, p) {
+        console.log("Just saved a product to db. Err?");
+        console.log(err);
+      });
+      res.send({prod: newP});
     });
 
   });

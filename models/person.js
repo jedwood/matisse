@@ -1,5 +1,5 @@
 var mongoose      = require('mongoose'),
-    helpers       = require('../helpers')
+    helpers       = require('../helpers'),
     plugins       = require('./plugins');
 
 var PersonSchema = new mongoose.Schema({

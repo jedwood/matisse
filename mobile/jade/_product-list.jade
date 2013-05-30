@@ -1,0 +1,8 @@
+ul.product-list(data-role='listview', data-inset='false', data-theme='e')
+  for p in prods
+    li
+      img(src='/img/products/' + p.id + '.jpg')
+      h5= p.title
+      p.price= p.price
+        span.each each
+      p.quantity quantity #{p.quantity}
