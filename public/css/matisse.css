@@ -1,15 +1,22 @@
 .hide {
   display: none;
 }
-h1 {
+.ui-content h1 {
   color: #000;
+}
+.container {
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 .fullbleedlr {
   margin-left: -15px;
   margin-right: -15px;
 }
-a.alt-link {
+.branded {
   color: #c00 !important;
+}
+.ui-header img.ui-title {
+  margin-bottom: 0.5em;
 }
 ul.ui-listview li.ui-btn .ui-btn-inner .ui-btn-text a {
   text-decoration: none;
@@ -23,25 +30,63 @@ ul.ui-listview li.ui-btn-hover-d {
   border-bottom: solid 1px #111;
   border-top: solid 1px #666;
 }
+ul.ui-listview li.ui-btn-down-e,
+ul.ui-listview li.ui-btn-up-e,
+ul.ui-listview li.ui-btn-hover-e {
+  border-top: solid 1px #ddd;
+}
+ul.ui-listview li.ui-btn-down-e .ui-btn-inner span.ui-icon,
+ul.ui-listview li.ui-btn-up-e .ui-btn-inner span.ui-icon,
+ul.ui-listview li.ui-btn-hover-e .ui-btn-inner span.ui-icon {
+  color: #999;
+}
+ul.ui-listview li.ui-btn-down-e .ui-btn-inner a .message,
+ul.ui-listview li.ui-btn-up-e .ui-btn-inner a .message,
+ul.ui-listview li.ui-btn-hover-e .ui-btn-inner a .message {
+  margin-top: 0px;
+  white-space: normal;
+}
+ul.ui-listview li.ui-btn-down-e .ui-btn-inner a .subtext,
+ul.ui-listview li.ui-btn-up-e .ui-btn-inner a .subtext,
+ul.ui-listview li.ui-btn-hover-e .ui-btn-inner a .subtext {
+  font-size: 0.7em;
+}
 .splashtop {
-  margin-top: 15px;
-  height: 200px;
-  background-image: url("/img/crayons.jpg");
+  margin-top: -10px;
+  height: 210px;
+  background-image: url("/img/colored-pencils.jpg");
   background-repeat: no-repeat;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
   .splashtop {
-    background-image: url("/img/crayons@2x.jpg");
-    -webkit-background-size: 100% auto;
-    -moz-background-size: 100% auto;
-    background-size: 100% auto;
+    background-image: url("/img/colored-pencils@2x.jpg");
+    -webkit-background-size: 320px auto;
+    -moz-background-size: 320px auto;
+    background-size: 320px auto;
   }
+}
+.welcome h1 {
+  font-size: 28px;
+  margin: 10px 0 0;
+}
+.welcome p {
+  font-size: 18px;
+  line-height: 2px;
+  font-weight: bold;
+  color: #989898;
+}
+.actions p {
+  font-size: 0.8em;
+  text-align: center;
+  font-weight: bold;
+  margin: 0;
+  color: #292929;
 }
 .fundertop {
   margin-top: -15px;
   padding-top: 5px;
-  padding-left: 120px;
-  height: 220px;
+  padding-left: 115px;
+  height: 170px;
   background-image: url("/img/marker.jpg");
   background-repeat: no-repeat;
 }
@@ -57,25 +102,25 @@ ul.ui-listview li.ui-btn-hover-d {
   margin: 0;
 }
 .fundertop h1 {
-  margin: 0 0 0 5px;
+  margin: 0 0 30px 5px;
   line-height: 0.7em;
   font-size: 2.7em;
 }
-.welcome h1 {
-  font-size: 28px;
+.fundertop .intromessage {
+  color: #666;
+  font-size: 1em;
+  line-height: 1.3em;
+  width: 200px;
 }
-.welcome p {
-  font-size: 18px;
-  line-height: 12px;
-  font-weight: bold;
+.fundertop .actions p {
+  text-align: left;
+  margin-top: 10px;
+}
+.recent-activities h4 {
+  margin-top: 10px;
   color: #989898;
-}
-.actions p {
-  font-size: 0.8em;
-  text-align: center;
-  font-weight: bold;
-  margin: 0;
-  color: #292929;
+  font-size: 0.7em;
+  padding-bottom: 10px;
 }
 .btn-shadow {
   -webkit-box-shadow: 0px 2px 1px #ccc;
@@ -127,6 +172,66 @@ ul.left-icons li.ui-btn .ui-btn-inner .ui-icon {
 }
 #form-search-schools .ui-input-search {
   border: none;
+}
+ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit {
+  padding-left: 80px;
+}
+ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit img.ui-li-thumb {
+  left: 10px;
+  top: 10px;
+  max-width: 60px;
+  max-height: 60px;
+}
+ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit h5 {
+  margin: 0;
+  color: #000;
+  font-size: 0.9em;
+}
+ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit h5 .project {
+  font-weight: normal;
+}
+ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit .message {
+  margin-top: 3px;
+}
+ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit .status {
+  margin-top: 10px;
+  margin-left: -2px;
+  margin-right: 10px;
+  margin-bottom: 0;
+  position: relative;
+}
+ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit .status .ui-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.1em;
+}
+ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit .status .ui-icon.ui-icon-time {
+  color: #c00;
+  margin-left: -3px;
+}
+ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit .status .ui-icon.ui-icon-time.nonurgent {
+  color: #ccc;
+}
+ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit .status .ui-icon.ui-icon-leaf {
+  color: #f39c12;
+}
+ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit .status .ui-icon.ui-icon-map-marker {
+  color: #2880b9;
+}
+ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit .status .ui-icon.ui-icon-money {
+  color: #15a085;
+}
+ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit .status .subtext {
+  margin-bottom: 0;
+  font-size: 0.7em;
+  font-weight: normal;
+  color: #666;
+  padding: 5px 0 0 25px;
+}
+ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit .status .subtext .suptext {
+  margin-left: 8px;
+  color: #aaa;
 }
 .instructions {
   color: #555;

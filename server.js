@@ -1,12 +1,20 @@
-var express = require('express'),
-    config  = require('nconf'),
-    mobile  = require('./mobile'),
+var express  = require('express'),
+    config   = require('nconf'),
+    mobile   = require('./mobile'),
+    mongoose = require('mongoose'),
     app  = express();
 
-config.argv().env().file({ file: '../config.json' });
+config.argv().env().file({ file: './config.json' });
 
-config.defaults({'PORT': 1337});
+config.defaults({'PORT': 1337, 'MONGOURL': 'mongodb://localhost/matisse'});
 
+mongoose.connect(config.get('MONGOURL'), function (err, res) {
+  if (err) {
+    console.log ('ERROR connecting to Mongo: ' + err);
+  } else {
+    console.log ('Mongo connections successful.');
+  }
+});
 
 app.configure(function(){
   app.set('port', config.get('PORT'));
@@ -20,7 +28,6 @@ app.configure('development', function(){
   app.use(express.logger('dev'));
   app.use(express.errorHandler());
 });
-
 
 app.use(mobile);
 

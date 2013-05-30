@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="css/matisse.css">
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
-    <script src="js/matisse.js"></script>
   </head>
   <body class="app">
     <div id="home" data-role="page" data-dom-cache="true">
@@ -31,18 +30,18 @@
           <li data-icon="false"><a href="/feedback" data-transition="slide"><span class="ui-icon ui-icon-bullhorn"></span>Give Feedback</a></li>
         </ul>
       </div>
-      <div data-role="header" data-position="fixed"><img src="img/matisse-logo-white.png" class="ui-title"><a href="#sidemenu" data-icon="reorder" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc big-icon">Menu</a></div>
+      <div data-role="header" data-position="fixed"><img src="img/matisse-logo-white.png" class="ui-title"><a href="#sidemenu" data-icon="reorder" data-swipe-close="true" data-dismissible="true" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="side-menu-btn ui-icon-nodisc big-icon">Menu</a></div>
       <div data-role="content">
         <div class="splashtop fullbleedlr"></div>
         <div class="welcome">
           <h1>welcome to Matisse.</h1>
-          <p class="bold">ready to <a class='alt-link' href='/find-schools' data-transition='slideup'>launch</a> a project?</p>
-          <p class="bold">looking to <a class='alt-link' href='/classrooms'>fund</a> one?</p>
+          <p class="bold">ready to <span class='branded'>launch</span> a project?</p>
+          <p class="bold">looking to <span class='branded'>fund</span> one?</p>
           <p class="bold">we'll get you started. <a class='link-alt' href='#'>learn more</a></p>
         </div>
-        <div class="actions ui-grid-a fullbleed">
+        <div class="actions ui-grid-a fullbleedlr">
           <div class="ui-block-a"><a href="/find-schools" data-role="button" class="btn-shadow">create account</a></div>
-          <div class="ui-block-b"><a href="#" data-role="button" class="btn-shadow">browse projects</a></div>
+          <div class="ui-block-b"><a href="/projects" data-role="button" class="btn-shadow">browse projects</a></div>
           <div class="ui-block-a">
             <p class="bold center">for teachers</p>
           </div>
@@ -53,5 +52,6 @@
       </div>
     </div>
     <script src="js/retina.js"></script>
+    <script src="js/matisse.js"></script>
   </body>
 </html>

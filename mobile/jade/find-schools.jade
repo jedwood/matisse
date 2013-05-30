@@ -1,7 +1,7 @@
 extends layout
 block content
   #schools(data-role='page')
-    include sidemenu
+    include _sidemenu
     div(data-role='header', data-position='fixed')
       form#form-search-schools
         input#search-schools.search-box(type='search', name='zip', data-theme='c', value=zip, placeholder='zip code')
@@ -21,16 +21,13 @@ block content
     div(data-role='content')
 
       if (zip)
-        ul(data-role='listview', data-theme='d', data-inset='false')
-          for school in schools
-            li
-              a(href='/index.html?school=' + school.name)
-                h2.school-name= school.name
-                p.school-address= school.address
-
+        if schools.length
+          include _school-list
+        else
+          p.instructions Sorry, we can't find any schools in that zip code. Try another?
       else
         p.instructions Enter your school's zip code above&nbsp;
-          span#nearby-schools-container.hide
+          span#nearby-schools-container.hide <br>
             a#btn-nearby-schools.alt-link(href="#") or search nearby.
 
         script
@@ -43,7 +40,6 @@ block content
             var Geo={};
 
             if (navigator.geolocation) {
-              console.log("oh we have geolocation!");
               $('#nearby-schools-container').removeClass('hide');
             }
 

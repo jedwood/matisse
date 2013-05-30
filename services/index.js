@@ -16,7 +16,10 @@ var services = module.exports = {
           sl.forEach(function(s){
             var school = {};
             school.name = services.stringUtils.titleCase(s.a[0]._.toLowerCase());
-            school.link = s.a[0].$.href;
+            school.targetLink = s.a[0].$.href;
+            //var zipMatch = s.p[0].match(/(\d{5})\-\d{4}$/);
+            //console.log(zipMatch);
+            school.zip = parseInt(zip, 10);
             school.address = services.stringUtils.titleCase(services.stringUtils.stripStateZip(s.p[0]).toLowerCase());
             schools.push(school);
           })
@@ -77,8 +80,7 @@ var services = module.exports = {
     },
 
     stripStateZip: function(adr) {
-      console.log("matching withing: " + adr);
-      return adr.replace(/\s[A-Z]*\s,\s[A-Z]{2}\s\d{5}\-\d{4}/, '');
+      return adr.replace(/\s,\s[A-Z]{2}\s\d{5}\-\d{4}/, '');
     }
   }
 

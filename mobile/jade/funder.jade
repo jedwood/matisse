@@ -1,16 +1,29 @@
 extends layout
 block content
   #home(data-role='page', data-dom-cache='false')
-    include sidemenu
+    include _sidemenu
     div(data-role='header', data-position='fixed')
       img.ui-title(src='img/matisse-logo-white.png')
-      a.ui-icon-nodisc.big-icon(href='#sidemenu', data-icon='reorder', data-iconpos='notext', data-shadow='false', data-iconshadow='false') Menu
+      include _menu-btn
     div(data-role='content')
       .fundertop.fullbleedlr
         h2 welcome
         h1 funder!
-        p.bold
-          a(href='#') see projects I'm supporting
-        p.bold
-          a(href='#') find classrooms to help
+        .actions
+          p
+            a(href='#') see projects I'm supporting
+          p
+            a(href='#') find classrooms to help
+
+    div.recent-activities(data-role='content')
+      h4 recent project activity
+      ul(data-role='listview', data-inset='false', data-theme='e')
+        - var activities = [1,2,3];
+        for activity in activities
+          li(data-icon='chevron-right')
+            a
+              img(src='/img/test.png')
+              //-h2 This is my jam: Diggable Planets
+              p.message We be to rap what <strong>key be to lock</strong>, 'cause I'm peace like that, <strong>I'm black like that.</strong>
+              p.subtext expiring soon ya'll!
 

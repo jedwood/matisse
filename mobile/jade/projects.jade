@@ -1,0 +1,20 @@
+extends layout
+block content
+  #home(data-role='page', data-dom-cache='false')
+    include _sidemenu
+    div(data-role='header', data-position='fixed')
+      h1 Projects
+      include _menu-btn
+    div(data-role='content')
+      .fundertop.fullbleedlr
+        h2 welcome
+        h1 funder!
+        .intromessage
+          p find a classroom project that needs your help
+          //- p
+          //-   a(href='#') see projects I'm supporting
+          //- p
+          //-   a(href='#') find classrooms to help
+
+      include _project-list
+

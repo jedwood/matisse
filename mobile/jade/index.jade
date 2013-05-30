@@ -1,26 +1,25 @@
 extends layout
 block content
   #home(data-role='page', data-dom-cache='true')
-    include sidemenu
+    include _sidemenu
     div(data-role='header', data-position='fixed')
       img.ui-title(src='img/matisse-logo-white.png')
-      a.ui-icon-nodisc.big-icon(href='#sidemenu', data-icon='reorder', data-iconpos='notext', data-shadow='false', data-iconshadow='false') Menu
+      include _menu-btn
     div(data-role='content')
       .splashtop.fullbleedlr
       .welcome
         h1 welcome to Matisse.
-        p.bold ready to <a class='alt-link' href='/find-schools' data-transition='slideup'>launch</a> a project?
-        p.bold looking to <a class='alt-link' href='/classrooms'>fund</a> one?
+        p.bold ready to <span class='branded'>launch</span> a project?
+        p.bold looking to <span class='branded'>fund</span> one?
         p.bold we'll get you started. <a class='link-alt' href='#'>learn more</a>
-      .actions.ui-grid-a.fullbleed
+      .actions.ui-grid-a.fullbleedlr
         .ui-block-a
           a.btn-shadow(href='/find-schools', data-role='button') create account
         .ui-block-b
-          a.btn-shadow(href='#', data-role='button') browse projects
+          a.btn-shadow(href='/projects', data-role='button') browse projects
         .ui-block-a
           p.bold.center for teachers
         .ui-block-b
           p.bold.center for funders
-
     //- div(data-role='footer')
     //-   h4 Page Footer

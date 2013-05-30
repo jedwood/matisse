@@ -1,0 +1,13 @@
+ul.project-list(data-role='listview', data-inset='false', data-theme='e')
+  for p in projects
+    li(data-icon='chevron-right')
+      a
+        img(src='/img/projects/' + p.smallImage)
+        h5= p.name
+          //- span.project project
+        p.message <strong>#{p.teacher.name}</strong> at <strong>#{p.school.name}</strong>
+          //- span.grade &nbsp;- #{p.teacher.grade}
+        .status
+          span.ui-icon(class=p.subtextClass)
+          p.subtext= p.subtext
+            span.suptext!= p.suptext
