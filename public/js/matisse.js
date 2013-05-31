@@ -38,6 +38,10 @@ $(document).bind('pageinit', function(){
 $(document).ready(function() {
   //fastButtons.replace();
   FastClick.attach(document.body);
+  $('body').on('tap', '.proj-drilldown-tabs a', function(event) {
+    $('.proj-dd').addClass('hide');
+    $('.proj-dd' + $(this).data('tabcontent')).removeClass('hide');
+  });
 });
 
 // $('body').on('tap', '.ui-panel-dismiss', function(event) {

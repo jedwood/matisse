@@ -154,17 +154,30 @@ ul.left-icons li.ui-btn .ui-btn-inner .ui-icon {
 .ui-icon-searchfield::after {
   background: none;
 }
-.big-icon.ui-btn-icon-notext {
+.ui-header .big-icon.ui-btn-icon-notext {
   width: 36px;
   height: 36px;
 }
-.big-icon .ui-btn-inner {
+.ui-header .big-icon .ui-btn-inner {
   -webkit-border-radius: 0px;
   border-radius: 0px;
 }
-.big-icon .ui-btn-inner .ui-icon {
+.ui-header .big-icon .ui-btn-inner .ui-icon {
   font-size: 2em;
   padding-top: 5px;
+}
+.ui-footer .big-icon.ui-btn-icon-notext {
+  width: 28px;
+  height: 28px;
+}
+.ui-footer .big-icon .ui-btn-inner {
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.ui-footer .big-icon .ui-btn-inner .ui-icon {
+  font-size: 1.5em;
+  padding-top: 5px;
+  padding-left: 3px;
 }
 #form-search-schools {
   margin-left: 50px;
@@ -236,6 +249,150 @@ ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit 
 ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit .status .subtext .suptext {
   margin-left: 8px;
   color: #aaa;
+}
+.project-detail .proj-top {
+  margin-top: -15px;
+  height: 150px;
+  background-image: url("/img/projects/project-detail-bg.jpg");
+  background-repeat: no-repeat;
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+  .project-detail .proj-top {
+    background-image: url("/img/projects/project-detail-bg@2x.jpg");
+    -webkit-background-size: 320px auto;
+    -moz-background-size: 320px auto;
+    background-size: 320px auto;
+  }
+}
+.project-detail .proj-footer .fund-btn-wrapper {
+  width: 55%;
+  margin: -27px auto 5px;
+}
+.project-detail .proj-footer .fund-btn-wrapper .fund-button {
+  margin: 0px auto;
+}
+.project-detail .proj-footer .fund-btn-wrapper .fund-button .ui-btn-inner {
+  padding: 0.45em 11px 0.4em;
+}
+.project-detail .proj-footer .fund-btn-wrapper .fund-button .ui-btn-inner .ui-btn-text {
+  font-size: 1.3em;
+  font-weight: normal;
+}
+.project-detail .proj-meta h1 {
+  margin-bottom: 0px;
+  font-size: 1.2em;
+}
+.project-detail .proj-meta .message {
+  margin-top: 2px;
+  color: #888;
+  font-size: 0.8em;
+  font-weight: 200;
+}
+.project-detail .proj-meta .message strong {
+  font-weight: bold;
+  color: #000;
+}
+.project-detail .proj-meta .progbar-outer {
+  margin-bottom: 5px;
+  margin-top: 20px;
+  height: 12px;
+  width: 100%;
+  -webkit-box-shadow: inset 1px 1px 4px #bbb;
+  box-shadow: inset 1px 1px 4px #bbb;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #e0e5e6;
+}
+.project-detail .proj-meta .progbar-outer .progbar-inner {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #22bc9e), color-stop(1, #17a186));
+  background: -webkit-linear-gradient(top, #22bc9e 0%, #17a186 100%);
+  background: -moz-linear-gradient(top, #22bc9e 0%, #17a186 100%);
+  background: -o-linear-gradient(top, #22bc9e 0%, #17a186 100%);
+  background: -ms-linear-gradient(top, #22bc9e 0%, #17a186 100%);
+  background: linear-gradient(top, #22bc9e 0%, #17a186 100%);
+  height: 11px;
+  width: 70%;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #18b092;
+}
+.project-detail .proj-meta .proj-stats .ui-block-b,
+.project-detail .proj-meta .proj-stats .ui-block-c,
+.project-detail .proj-meta .proj-stats .ui-block-d {
+  padding-left: 20px;
+}
+.project-detail .proj-meta .proj-stats sup {
+  vertical-align: top;
+  font-size: 0.5em;
+}
+.project-detail .proj-meta .proj-stats h5 {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.project-detail .proj-meta .proj-stats p {
+  color: #888;
+  font-size: 0.5em;
+  margin: 0;
+  padding: 0;
+}
+.project-detail .proj-drilldown-tabs {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  max-width: none;
+  margin: 20px -15px;
+  background-color: #fff;
+  border-top: solid 1px #e0e0e0;
+  border-right: none;
+  border-left: none;
+  -webkit-box-shadow: 0px 1px 1px 0px #aaa;
+  box-shadow: 0px 1px 1px 0px #aaa;
+}
+.project-detail .proj-drilldown-tabs a {
+  border: none;
+  color: #0069ff;
+}
+.project-detail .proj-drilldown-tabs a.ui-btn-active {
+  border: none;
+  background-color: #fff;
+  font-weight: bold;
+  color: #999;
+}
+.project-detail .proj-drilldown-tabs a .ui-btn-inner .ui-btn-text {
+  font-size: 0.9em;
+}
+.project-detail .proj-dd {
+  color: #aaa;
+}
+.project-detail .proj-dd h5 {
+  color: #000;
+  margin: 10px 0;
+}
+.project-detail .proj-dd.proj-dd-details,
+.project-detail .proj-dd.proj-dd-instructions {
+  padding: 0px 10px;
+}
+.project-detail .proj-dd.proj-dd-details ul,
+.project-detail .proj-dd.proj-dd-instructions ul,
+.project-detail .proj-dd.proj-dd-details ol,
+.project-detail .proj-dd.proj-dd-instructions ol {
+  list-style-position: outside;
+  padding-left: 0.9em;
+  text-indent: -0.9em;
+  font-size: 0.75em;
+  list-style: none;
+}
+.project-detail .proj-dd.proj-dd-details ul li,
+.project-detail .proj-dd.proj-dd-instructions ul li,
+.project-detail .proj-dd.proj-dd-details ol li,
+.project-detail .proj-dd.proj-dd-instructions ol li {
+  padding-bottom: 8px;
+}
+.project-detail .proj-dd p {
+  line-height: 1.3em;
+  font-size: 0.75em;
+}
+.project-detail .proj-dd.proj-dd-supplies ul.product-list.ui-listview li.ui-first-child {
+  border-top: none;
 }
 ul.product-list li.ui-li-has-thumb img {
   padding: 10px;

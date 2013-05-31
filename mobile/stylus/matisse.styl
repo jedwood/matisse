@@ -135,15 +135,28 @@ ul.left-icons
 .ui-icon:not(.ui-icon-loading), .ui-icon-searchfield::after
   background none
 
-.big-icon
-  &.ui-btn-icon-notext
-    width 36px
-    height 36px
-  .ui-btn-inner
-    border-radius 0px
-    .ui-icon
-      fs 2em
-      pt 5px
+.ui-header
+  .big-icon
+    &.ui-btn-icon-notext
+      width 36px
+      height 36px
+    .ui-btn-inner
+      border-radius 0px
+      .ui-icon
+        fs 2em
+        pt 5px
+
+.ui-footer
+  .big-icon
+    &.ui-btn-icon-notext
+      width 28px
+      height 28px
+    .ui-btn-inner
+      border-radius 0px
+      .ui-icon
+        fs 1.5em
+        pt 5px
+        pl 3px
 
 
 #form-search-schools
@@ -204,6 +217,114 @@ ul.project-list
               .suptext
                 ml 8px
                 color #aaa
+
+
+.project-detail
+  .proj-top
+    mt -15px
+    height 150px
+    image '/img/projects/project-detail-bg.jpg' 320px auto
+    background-repeat no-repeat
+  .proj-footer
+    .fund-btn-wrapper
+      width 55%
+      margin -27px auto 5px
+      .fund-button
+        margin 0px auto
+        .ui-btn-inner
+          padding .45em 11px .4em
+          .ui-btn-text
+            fs 1.3em
+            fw normal
+  .proj-meta
+    h1
+      mb 0px
+      fs 1.2em
+    .message
+      mt 2px
+      color #888
+      fs .8em
+      fw 200
+      strong
+        fw bold
+        color #000
+    .progbar-outer
+      mb 5px
+      mt 20px
+      height 12px
+      width 100%
+      box-shadow inset 1px 1px 4px #bbb
+      border-radius 10px
+      background-color #e0e5e6
+      .progbar-inner
+        background linear-gradient(top, #22bc9e, #17a186);
+        height 11px
+        width 70%
+        border-radius 10px
+        //border solid 1px #bce2d9
+        background-color #18b092
+    .proj-stats
+      .ui-block-b, .ui-block-c, .ui-block-d
+        pl 20px
+      sup
+        vertical-align top
+        fs .5em
+      h5
+        mt 5px
+        mb 0
+      p
+        color #888
+        fs .5em
+        margin 0
+        padding 0
+  .proj-drilldown-tabs
+    pt 4px
+    pb 4px
+    max-width none
+    margin 20px -15px
+    bgc white
+    border-top solid 1px #e0e0e0
+    border-right none
+    border-left none
+    box-shadow 0px 1px 1px 0px #aaa
+    a
+      border none
+      color #0069ff
+      &.ui-btn-active
+        border none
+        bgc #fff
+        fw bold
+        color #999
+      .ui-btn-inner
+        .ui-btn-text
+          fs .9em
+
+  .proj-dd
+    color #aaa
+    h5
+      color #000
+      margin 10px 0
+    &.proj-dd-details, &.proj-dd-instructions
+      padding 0px 10px
+      ul, ol
+        list-style-position outside
+        padding-left .9em
+        text-indent -.9em
+        //line-height 1.5em
+        font-size .75em
+        list-style none
+        li
+          pb 8px
+    p
+      line-height 1.3em
+      font-size .75em
+
+    &.proj-dd-supplies
+      ul.product-list.ui-listview
+        li.ui-first-child
+          border-top none
+
+
 
 ul.product-list
   li.ui-li-has-thumb

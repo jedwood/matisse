@@ -25,27 +25,13 @@ app.get('/find-schools', function(req, res) {
   }
 });
 
-app.get('/products/:ID', function(req, res) {
-  productById(req.param('ID'), res);
-});
-
-app.get('/projects/:ID', function(req, res) {
-  models.Project.findById(req.param('ID')).populate('teacher school').exec(function(err, proj){
-    if (err) return res.status(500).send(err);
-    //TODO make this legit
-    models.Product.find({}, function(err, prods) {
-      if (err) return res.status(500).send(err);
-      res.render('project-detail', {proj:proj, prods:prods});
-    });
-  });
-});
-
 app.get('/projects', function(req, res) {
   models.Project.find({}).populate('teacher school').exec(function(err, projects){
     //fake the subtext
     var expire = true;
     var counter = 0;
     projects.forEach(function(p){
+      if (counter==0) p.prefetch = true;
       if (expire) {
         p.subtextClass = 'ui-icon-time';
         p.subtext = 'expiring soon';
@@ -74,8 +60,23 @@ app.get('/projects', function(req, res) {
   });
 });
 
+app.get('/projects/:ID', function(req, res) {
+  models.Project.findById(req.param('ID')).populate('teacher school').exec(function(err, proj){
+    if (err) return res.status(500).send(err);
+    //TODO make this legit
+    models.Product.find({}, function(err, prods) {
+      if (err) return res.status(500).send(err);
+      res.render('project-detail', {p:proj, prods:prods});
+    });
+  });
+});
+
 app.post('/projects', function(req, res) {
   //TODO
+});
+
+app.get('/products/:ID', function(req, res) {
+  productById(req.param('ID'), res);
 });
 
 

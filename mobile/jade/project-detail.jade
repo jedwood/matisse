@@ -1,9 +1,44 @@
 extends layout
 block content
-  div(id='project-detail-' + proj.id, data-role='page')
-    //- include _sidemenu
-    div(data-role='header', data-position='fixed')
-      h1= proj.name
-      a(href='/projects', data-transition='slide', data-rel='back') projects
+  div.project-detail(id='project-detail-' + p.id, data-role='page')
     div(data-role='content')
-      include _product-list
+      .proj-top.fullbleedlr
+      .proj-meta
+        h1= p.name
+        p.message <strong>#{p.teacher.name}</strong> at <strong>#{p.school.name}</strong>
+          span.grade &nbsp;- #{p.teacher.grade}
+        .progbar-outer
+          .progbar-inner
+        .ui-grid-c.proj-stats
+            .ui-block-a
+              h5 <sup>$</sup>80
+              p OUT OF <sup>$</sup>120
+            .ui-block-b
+              h5 1
+              p DAY LEFT
+            .ui-block-c
+              h5 12
+              p FUNDERS
+            .ui-block-d
+              h5 23
+              p STUDENTS
+      .proj-drilldown-tabs(data-role='navbar')
+        ul
+          li
+            a.ui-btn-active(data-theme='f', data-tabcontent='.proj-dd-details') details
+          li
+            a(data-theme='f', data-tabcontent='.proj-dd-supplies') supplies
+          li
+            a(data-theme='f', data-tabcontent='.proj-dd-instructions') instructions
+
+      .proj-dd.proj-dd-details!= "<h5>project details</h5>" + p.description
+      .proj-dd.proj-dd-supplies.hide
+        include _product-list
+      .proj-dd.proj-dd-instructions.hide!= "<h5>step-by-step instructions</h5>" + p.instructions
+
+    div.proj-footer(data-role='footer', data-position='fixed', data-theme='d')
+      a.back-projects-btn.ui-icon-nodisc.big-icon(href="/projects", data-rel='back', data-icon='chevron-left', data-iconpos='notext', data-shadow='false', data-iconshadow='false') projects
+      a.back-projects-btn.ui-icon-nodisc.big-icon.ui-btn-right(data-icon='share-alt', data-iconpos='notext', data-shadow='false', data-iconshadow='false') projects
+      .fund-btn-wrapper
+        a.fund-button(href='/projects/' + p.id + '/fund', data-role='button', data-theme='b') fund this art project
+

@@ -81,6 +81,7 @@ a [class*=" icon-"] {
 .ui-icon-pencil:before { content: "\f040"; margin-top: 2px; margin-left: 3px; }
 .ui-icon-map-marker:before { content: "\f041"; margin-top: 2px; margin-left: 2px; }
 .ui-icon-share:before { content: "\f045"; margin-top: 3px; margin-left: 3px; }
+.ui-icon-share-alt:before { content: "\f064"; margin-top: 2px; margin-left: 2px; }
 .ui-icon-chevron-left:before { content: "\f053"; margin-top: 2px; margin-left: 1px; }
 .ui-icon-chevron-right:before { content: "\f054"; margin-top: 2px; margin-left: 3px; }
 .ui-icon-plus-sign:before { content: "\f055"; margin-top: 2px; margin-left: 3px; }
