@@ -22,5 +22,14 @@ $(document).bind('pageinit', function(){
   //   $('.ui-panel-content-wrap-closed').addClass('ui-panel-content-wrap-open').removeClass('.ui-panel-content-wrap-closed');
   //   event.preventDefault();
   // });
+  function highdpi_init() {
+    $("img.retina").each(function () {
+      $this = $(this);
+      $this.removeClass('retina');
+      var src = $this.attr("src");
+      $this.attr("src", src.replace(/(@2x)*.png/i, "@2x.png").replace(/(@2x)*.jpg/i, "@2x.jpg"));
+    });
+  }
 
+  highdpi_init();
 });

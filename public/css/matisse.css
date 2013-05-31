@@ -18,6 +18,10 @@
 .ui-header img.ui-title {
   margin-bottom: 0.5em;
 }
+.ui-header img.ui-title.matisse-sig {
+  width: 106px;
+  height: 27px;
+}
 ul.ui-listview li.ui-btn .ui-btn-inner .ui-btn-text a {
   text-decoration: none;
 }
@@ -135,11 +139,11 @@ ul.left-icons li.ui-btn .ui-btn-inner .ui-icon {
   width: 40px;
   display: inline-block;
 }
-.sidemenu ul li {
+#sidemenu ul li {
   border-bottom: solid 1px #a00;
   border-top: solid 1px #dc3737;
 }
-.sidemenu ul li a {
+#sidemenu ul li a {
   font-size: 1.1em;
   padding-top: 18px;
   padding-top: 18px;

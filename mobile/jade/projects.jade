@@ -1,10 +1,10 @@
 extends layout
 block content
   #projects(data-role='page', data-dom-cache='true')
-    include _sidemenu
+    //- include _sidemenu
     div(data-role='header', data-position='fixed')
       h1 Projects
-      include _menu-btn
+      a.side-menu-btn.ui-icon-nodisc.big-icon(href="/", data-rel='back', data-icon='home', data-iconpos='notext', data-shadow='false', data-iconshadow='false') Home
     div(data-role='content')
       .fundertop.fullbleedlr
         h2 welcome
@@ -17,4 +17,3 @@ block content
           //-   a(href='#') find classrooms to help
 
       include _project-list
-
