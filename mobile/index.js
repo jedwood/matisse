@@ -26,7 +26,7 @@ app.get('/find-schools', function(req, res) {
 });
 
 app.get('/projects', function(req, res) {
-  models.Project.find({}).populate('teacher school').exec(function(err, projects){
+  models.Project.find({}).sort('_id').populate('teacher school').exec(function(err, projects){
     //fake the subtext
     var expire = true;
     var counter = 0;
@@ -61,7 +61,8 @@ app.get('/projects', function(req, res) {
 });
 
 app.get('/projects/:ID', function(req, res) {
-  models.Project.findById(req.param('ID')).populate('teacher school').exec(function(err, proj){
+  //models.Project.findById(req.param('ID')).populate('teacher school').exec(function(err, proj){
+  models.Project.findById('51a77ecbf12e5a848d000002').populate('teacher school').exec(function(err, proj){
     if (err) return res.status(500).send(err);
     //TODO make this legit
     models.Product.find({}, function(err, prods) {

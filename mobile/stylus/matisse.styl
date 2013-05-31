@@ -288,6 +288,7 @@ ul.project-list
     border-left none
     box-shadow 0px 1px 1px 0px #aaa
     a
+      position relative
       border none
       color #0069ff
       &.ui-btn-active
@@ -298,9 +299,18 @@ ul.project-list
       .ui-btn-inner
         .ui-btn-text
           fs .9em
+      &.ui-btn-active:after
+        content ''
+        display block
+        position absolute
+        //background-color goldenrod
+        width 20px
+        height 20px
+        left 45px
+        top 25px
 
   .proj-dd
-    color #aaa
+    color #777
     h5
       color #000
       margin 10px 0
@@ -323,7 +333,6 @@ ul.project-list
       ul.product-list.ui-listview
         li.ui-first-child
           border-top none
-
 
 
 ul.product-list
