@@ -1,9 +1,8 @@
 extends layout
 block content
   #schools(data-role='page')
-    //- include _sidemenu
     div(data-role='header', data-position='fixed')
-      form#form-search-schools
+      form#form-search-schools(data-transition='slidedown')
         input#search-schools.search-box(type='search', name='zip', data-theme='c', value=zip, placeholder='zip code')
         input#schools-lat(type='hidden', name='lat', value='')
         input#schools-long(type='hidden', name='long', value='')
@@ -15,7 +14,7 @@ block content
       //-     label(for='list-switch') List
       //-     input#map-switch(type='radio', name='switch')
       //-     label(for='map-switch') Map
-      a.ui-icon-nodisc.big-icon(href="/", data-rel='back', data-icon='home', data-iconpos='notext', data-shadow='false', data-iconshadow='false') Home
+      a.ui-icon-nodisc.big-icon(href="/", data-icon='home', data-iconpos='notext', data-shadow='false', data-iconshadow='false') Home
 
     //- see http://view.jquerymobile.com/master/demos/examples/maps/list-toggle.php for example
     div(data-role='content')
@@ -63,5 +62,3 @@ block content
               console.log("Geocoder failed");
             }
           }());
-
-

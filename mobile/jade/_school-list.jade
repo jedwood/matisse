@@ -1,6 +1,6 @@
 ul(data-role='listview', data-theme='d', data-inset='false')
   for school in schools
     li
-      a(href='/index.html?school=' + school.name)
+      a(href='/teachers/new?schoolid=' + school.id, data-transition='slideup')
         h2.school-name= school.name
         p.school-address= school.address

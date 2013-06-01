@@ -42,6 +42,15 @@ $(document).ready(function() {
     $('.proj-dd').addClass('hide');
     $('.proj-dd' + $(this).data('tabcontent')).removeClass('hide');
   });
+
+  $('body').on('tap', '.ui-panel-dismiss', function(event) {
+    console.log("ui-panel-dismiss TAP");
+    $sm = $('#sidemenu');
+    if ($sm.hasClass('ui-panel-open')) {
+      $sm.panel('close');
+    }
+    event.preventDefault();
+  });
 });
 
 // $('body').on('tap', '.ui-panel-dismiss', function(event) {

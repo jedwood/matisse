@@ -72,8 +72,16 @@ app.get('/projects/:ID', function(req, res) {
   });
 });
 
-app.post('/projects', function(req, res) {
-  //TODO
+app.get('/teachers/new', function(req, res) {
+  if (req.query.schoolid) {
+    models.School.findById(req.query.schoolid, function(err, school) {
+      console.log("Here's the school: " , school);
+      if (err) return res.status(404).send(err);
+      res.render('new-teacher', {school:school});
+    });
+  } else {
+    res.redirect('/find-schools')
+  }
 });
 
 app.get('/products/:ID', function(req, res) {

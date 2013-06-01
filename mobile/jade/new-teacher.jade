@@ -1,0 +1,16 @@
+extends layout
+block content
+  #new-teacher(data-role='page')
+    div(data-role='header', data-position='fixed')
+      a(href="/find-schools", data-rel='back') cancel
+      h1 New Teacher
+
+    div(data-role='content')
+
+      form#new-teacher-form(data-transition='slidedown')
+        label(for='new-teacher-numstudents') How many students in your classroom?
+        input#new-teacher-numstudents(type='number', data-clear-btn="false", name='numstudents', pattern='[0-9]*', value='')
+        //- input#search-schools.search-box(type='search', name='zip', data-theme='c', value=zip, placeholder='zip code')
+        //- input#schools-lat(type='hidden', name='lat', value='')
+        //- input#schools-long(type='hidden', name='long', value='')
+        //-a(data-role='submit', data-inline="true")GO
