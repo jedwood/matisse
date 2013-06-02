@@ -88,6 +88,10 @@ app.get('/logout', function(req, res) {
   });
 });
 
+app.get('/fund', function(req, res) {
+  res.render('fund');
+});
+
 app.get('/projects/:ID/fund', function(req, res) {
   //models.Project.findById(req.param('ID')).populate('teacher school').exec(function(err, proj){
   // models.Project.findById('51a77ecbf12e5a848d000002').populate('teacher school').exec(function(err, proj){

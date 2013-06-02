@@ -247,121 +247,192 @@ ul.project-list
                 color #aaa
 
 
-.project-detail
-  .proj-top
-    mt -15px
-    height 150px
-    image '/img/projects/project-detail-bg.jpg' 320px auto
-    background-repeat no-repeat
-  .proj-footer
-    .fund-btn-wrapper
-      width 55%
-      margin -28px auto 5px
-      .fund-button
-        margin 0px auto
-        .ui-btn-inner
-          padding .45em 11px .4em
-          .ui-btn-text
-            fs 1.3em
-            fw normal
-  .proj-meta
-    h1
-      mb 0px
-      fs 1.2em
-    .message
-      mt 2px
-      color #888
-      fs .8em
-      fw 200
-      strong
-        fw bold
-        color #000
-    .progbar-outer
-      mb 5px
-      mt 20px
-      height 12px
-      width 100%
-      box-shadow inset 1px 1px 4px #bbb
-      border-radius 10px
-      background-color #e0e5e6
-      .progbar-inner
-        background linear-gradient(top, #22bc9e, #17a186);
-        height 11px
-        width 70%
-        border-radius 10px
-        //border solid 1px #bce2d9
-        background-color #18b092
-    .proj-stats
-      .ui-block-b, .ui-block-c, .ui-block-d
-        pl 20px
-      sup
-        vertical-align top
-        fs .5em
-      h5
-        mt 5px
-        mb 0
-      p
-        color #888
-        fs .5em
-        margin 0
-        padding 0
-  .proj-drilldown-tabs
-    pt 4px
-    pb 4px
-    max-width none
-    margin 20px -15px
-    bgc white
-    border-top solid 1px #e0e0e0
-    border-right none
-    border-left none
-    box-shadow 0px 1px 1px 0px #aaa
-    a
-      position relative
-      border none
-      color #0069ff
-      &.ui-btn-active
-        border none
-        bgc #fff
-        fw bold
-        color #999
+//.project-detail
+.proj-top
+  mt -15px
+  height 150px
+  image '/img/projects/project-detail-bg.jpg' 320px 150px
+  background-repeat no-repeat
+  &.fund-top
+    height 100px
+.proj-footer
+  .fund-btn-wrapper
+    width 55%
+    margin -28px auto 5px
+    .fund-button
+      margin 0px auto
       .ui-btn-inner
+        padding .45em 11px .4em
         .ui-btn-text
-          fs 1.1em
-      &.ui-btn-active:after
-        content ''
-        display block
-        position absolute
-        image '/img/pointer.png' 13px 12px
-        background-repeat no-repeat
-        width 13px
-        height 12px
-        left 48px
-        top 32px
-
-  .proj-dd
-    color #777
-    h5
+          fs 1.3em
+          fw normal
+.proj-meta
+  h1
+    mb 0px
+    fs 1.2em
+  .message
+    mt 2px
+    color #888
+    fs .8em
+    fw 200
+    strong
+      fw bold
       color #000
-      margin 10px 0
-    &.proj-dd-details, &.proj-dd-instructions
-      padding 0px 10px
-      ul, ol
-        list-style-position outside
-        padding-left .9em
-        text-indent -.9em
-        //line-height 1.5em
-        font-size .75em
-        list-style none
-        li
-          pb 8px
+  .progbar-outer
+    mb 5px
+    mt 20px
+    height 12px
+    width 100%
+    box-shadow inset 1px 1px 4px #bbb
+    border-radius 10px
+    background-color #e0e5e6
+    .progbar-inner
+      background linear-gradient(top, #22bc9e, #17a186);
+      height 11px
+      width 70%
+      border-radius 10px
+      //border solid 1px #bce2d9
+      background-color #18b092
+  .proj-stats
+    .ui-block-b, .ui-block-c, .ui-block-d
+      pl 20px
+    sup
+      vertical-align top
+      fs .5em
+    h5
+      mt 5px
+      mb 0
     p
-      line-height 1.3em
+      color #888
+      fs .5em
+      margin 0
+      padding 0
+  &.fund-meta
+    pl 30px
+    pt 30px
+    height 70px
+    background rgba(50, 50, 50, .6)
+    h1, .message, strong
+      color #fff
+.proj-drilldown-tabs
+  pt 4px
+  pb 4px
+  max-width none
+  margin 20px -15px
+  bgc white
+  border-top solid 1px #e0e0e0
+  border-right none
+  border-left none
+  box-shadow 0px 1px 1px 0px #aaa
+  a
+    position relative
+    border none
+    color #0069ff
+    &.ui-btn-active
+      border none
+      bgc #fff
+      fw bold
+      color #999
+    .ui-btn-inner
+      .ui-btn-text
+        fs 1.1em
+    &.ui-btn-active:after
+      content ''
+      display block
+      position absolute
+      image '/img/pointer.png' 13px 12px
+      background-repeat no-repeat
+      width 13px
+      height 12px
+      left 48px
+      top 32px
+
+.proj-dd
+  color #777
+  h5
+    color #000
+    margin 10px 0
+  &.proj-dd-details, &.proj-dd-instructions
+    padding 0px 10px
+    ul, ol
+      list-style-position outside
+      padding-left .9em
+      text-indent -.9em
+      //line-height 1.5em
       font-size .75em
+      list-style none
+      li
+        pb 8px
+  p
+    line-height 1.3em
+    font-size .75em
 
     // &.proj-dd-supplies
     //   ul.product-list.ui-listview
     //     li.ui-first-child
     //       border-top none
+
+.henri-container
+  position relative
+  mt 25px
+  .ui-slider-track
+    margin 20px 10px 10px 10px
+    mt 20px
+    .ui-btn-active
+      &.ui-slider-bg
+        bgc #19bc9c
+        background linear-gradient(top, #22bc9e, #17a186);
+  .henri-money
+    position absolute
+    top 60px
+    right 95px
+    color #fff
+    font-size 1.2em
+  .my-contribution
+    position absolute
+    top 7px
+    right 27px
+    width 100px
+    text-align center
+    color #aaa
+    font-size .75em
+    fw bold
+
+#henri-slider
+  position absolute
+  top 30px
+  right 10px
+  background-color #009f86
+  border none !important
+  padding 0
+  width 100px
+  height 100px
+  border-radius 50px
+  color #fff
+  font-size 2em
+  box-shadow none
+  margin-right 15px
+
+
+#henri-face
+  ml 20px
+  width 151px;
+  height 122px;
+  background-repeat no-repeat
+  &.sadHenri
+    background-image url('/img/henri-sad.png')
+  &.happyHenri
+    background-image url('/img/henri-happy.png')
+  &.ecstaticHenri
+    background-image url('/img/henri-ecstatic.png')
+
+.funder-message
+  text-align center
+  color #999
+  p.funder-followup
+    fs .75em
+    fw 200
+    padding 0 20px
 
 
 ul.product-list

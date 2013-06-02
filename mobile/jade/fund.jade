@@ -1,0 +1,44 @@
+extends layout
+block content
+  #fund(data-role='page')
+
+    //- div(data-role='header', data-position='fixed')
+    //-   h1 fund this project
+    //-   a(href='/', data-rel='back') cancel
+    .fund-top.proj-top
+      .fund-meta.proj-meta
+        //- h1.inverse= p.name
+        //- p.message.inverse <strong>#{p.teacher.name}</strong> at <strong>#{p.school.name}</strong>
+        //-   span.grade &nbsp;- #{p.teacher.grade}
+        h1 Some Awesome Project
+        p.message <strong>Mr. Wood</strong> at <strong>Jenner Academy</strong>
+          span.grade &nbsp;- 4th grade
+
+    .henri-container(data-role='content')
+      .dummy.happyHenri
+      .dummy.ecstatiHenri
+      #henri-face.sadHenri
+
+      span.my-contribution my contribution
+      input#henri-slider(type='range', name='henrislider', data-mini='false', value='0', min='0', max='25', step='1', data-theme='e', data-highlight='true')
+      span.henri-money $
+
+    div.funder-message(data-role='content')
+      p.funder-followup
+        | all funders receive follow-up project photos<br />
+        | and a thank-you note from the classroom.
+
+    .proj-footer(data-role='footer', data-position='fixed', data-theme='d')
+      a.back-projects-btn.ui-icon-nodisc.big-icon(href='#', data-rel='back', data-icon='remove', data-iconpos='notext', data-shadow='false', data-iconshadow='false') cancel
+      .fund-btn-wrapper
+        a.fund-button(href='/checkout', data-role='button', data-theme='b', data-transition='slideup') proceed to checkout
+    script
+      //$('#henrislider').on('change', function(event){
+      setInterval(function(){
+        $henriSlider = $('#henri-slider');
+        $henriFace = $('#henri-face');
+        var amt = parseInt($henriSlider.val(), 10);
+        if (amt > 19) $henriFace.removeClass('sadHenri ecstaticHenri').addClass('ecstaticHenri')
+        else if (amt > 4) $henriFace.removeClass('sadHenri ecstaticHenri').addClass('happyHenri')
+        else $henriFace.removeClass('happyHenri ecstaticHenri').addClass('sadHenri')
+      }, 1000);
