@@ -86,6 +86,42 @@ ul.ui-listview li.ui-btn-hover-e .ui-btn-inner a .subtext {
   margin: 0;
   color: #292929;
 }
+.about-screen {
+  padding-top: 10px;
+  padding-left: 115px;
+  height: 130px;
+  border-bottom: solid 1px #999;
+  background-image: url("/img/marker.jpg");
+  background-repeat: no-repeat;
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+  .about-screen {
+    background-image: url("/img/marker@2x.jpg");
+    -webkit-background-size: 95px auto;
+    -moz-background-size: 95px auto;
+    background-size: 95px auto;
+  }
+}
+.about-screen h2 {
+  margin: 0;
+  font-size: 1em;
+}
+.about-screen h1 {
+  margin: 12px 0 3px 0px;
+  line-height: 1.1em;
+  font-size: 1.5em;
+}
+#about .intromessage {
+  color: #666;
+  font-size: 1em;
+  line-height: 1.3em;
+}
+.feedback-header {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  margin-top: 0;
+}
 .new-proj-top {
   margin-top: -15px;
   padding-top: 5px;

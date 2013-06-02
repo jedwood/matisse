@@ -1,0 +1,25 @@
+extends layout
+block content
+  #feedback(data-role='page')
+    div(data-role='header', data-position='fixed')
+      h1 Feedback
+      a.ui-icon-nodisc.big-icon(href="/", data-icon='home', data-iconpos='notext', data-shadow='false', data-iconshadow='false') Home
+    div(data-role='content')
+      #wufoo-z7p8a3
+        a(href='http://limechile.wufoo.com/forms/z7p8a3') Send some feedback to Matisse
+        script(type='text/javascript')
+          var z7p8a3;(function(d, t) {
+          var s = d.createElement(t), options = {
+          'userName':'limechile',
+          'formHash':'z7p8a3',
+          'autoResize':true,
+          'height':'517',
+          'async':true,
+          'header':'show',
+          'ssl':true};
+          s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+          s.onload = s.onreadystatechange = function() {
+          var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+          try { z7p8a3 = new WufooForm();z7p8a3.initialize(options);z7p8a3.display(); } catch (e) {}};
+          var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+          })(document, 'script');

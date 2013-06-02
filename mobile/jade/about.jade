@@ -1,0 +1,25 @@
+extends layout
+block content
+  #about(data-role='page')
+    div(data-role='header', data-position='fixed')
+      h1 About
+      a.ui-icon-nodisc.big-icon(href="/", data-rel='back', data-icon='home', data-iconpos='notext', data-shadow='false', data-iconshadow='false') Home
+
+    .about-screen.fullbleedbr(data-role='content')
+
+      h2.teachers-registers teachers register,
+      h2.community-chipin communities contribute,
+      h1.kids-create children create a brighter future
+
+    .fullbleedbr
+      iframe(width='320', height='180', src='http://www.youtube.com/embed/yXg6o559Zwc', frameborder='0', allowfullscreen)
+
+    div(data-role='content')
+      p.intromessage
+        | Thanks for checking out Matisse.<br />
+        | This early prototype was made to demonstrate our concept
+        | for the <br /><a href='http://www.fastcolabs.com/accelerator/retail' target='_blank'>Target + FastCo Labs Accellerator</a>.
+
+      p.intromessage
+        | We'd love to hear <a href='/feedback'>your feedback</a>.
+

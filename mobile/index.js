@@ -9,6 +9,14 @@ app.set('view engine', 'jade');
 
 // ROUTES
 
+app.get('/about', function(req, res) {
+  res.render('about');
+});
+
+app.get('/feedback', function(req, res) {
+  res.render('feedback');
+});
+
 app.get('/find-schools', function(req, res) {
   var zip = req.query.zip || false;
   if (!zip) {
@@ -95,8 +103,6 @@ app.get('/projects/:ID/fund', function(req, res) {
 app.get('/projects/:ID/clone', function(req, res) {
   if (!req.session.teacher) return res.status(401).send("Only teachers can copy projects");
   models.Project.findById(req.param('ID')).exec(function(err, proj){
-    console.log("Here's our full teacher: ");
-    console.log(req.session.teacher);
     var clone = new models.Project();
     clone.name = proj.name;
     clone.description = proj.description;
@@ -105,9 +111,7 @@ app.get('/projects/:ID/clone', function(req, res) {
     clone.school = req.session.teacher.school;
     clone.teacher = req.session.teacher._id;
     clone.active = false;
-    console.log("here's the updated" , clone);
     clone.save(function(err, newp) {
-      console.log("New Project!", newp);
       res.redirect('/projects/' + newp.id + "?isnew=true");
     });
   });
