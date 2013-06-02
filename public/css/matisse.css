@@ -37,7 +37,7 @@ ul.ui-listview li.ui-btn-hover-d {
 ul.ui-listview li.ui-btn-down-e,
 ul.ui-listview li.ui-btn-up-e,
 ul.ui-listview li.ui-btn-hover-e {
-  border-top: solid 1px #ddd;
+  border-bottom: solid 1px #ddd;
 }
 ul.ui-listview li.ui-btn-down-e .ui-btn-inner span.ui-icon,
 ul.ui-listview li.ui-btn-up-e .ui-btn-inner span.ui-icon,
@@ -86,37 +86,38 @@ ul.ui-listview li.ui-btn-hover-e .ui-btn-inner a .subtext {
   margin: 0;
   color: #292929;
 }
-.fundertop {
+.new-proj-top {
   margin-top: -15px;
   padding-top: 5px;
   padding-left: 115px;
-  height: 170px;
+  height: 150px;
+  border-bottom: solid 1px #999;
   background-image: url("/img/marker.jpg");
   background-repeat: no-repeat;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
-  .fundertop {
+  .new-proj-top {
     background-image: url("/img/marker@2x.jpg");
     -webkit-background-size: 95px auto;
     -moz-background-size: 95px auto;
     background-size: 95px auto;
   }
 }
-.fundertop h2 {
+.new-proj-top h2 {
   margin: 0;
 }
-.fundertop h1 {
+.new-proj-top h1 {
   margin: 0 0 30px 5px;
   line-height: 0.7em;
   font-size: 2.7em;
 }
-.fundertop .intromessage {
+.new-proj-top .intromessage {
   color: #666;
   font-size: 1em;
   line-height: 1.3em;
   width: 200px;
 }
-.fundertop .actions p {
+.new-proj-top .actions p {
   text-align: left;
   margin-top: 10px;
 }
@@ -359,16 +360,26 @@ ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit 
   color: #999;
 }
 .project-detail .proj-drilldown-tabs a .ui-btn-inner .ui-btn-text {
-  font-size: 0.9em;
+  font-size: 1.1em;
 }
 .project-detail .proj-drilldown-tabs a.ui-btn-active:after {
   content: '';
   display: block;
   position: absolute;
-  width: 20px;
-  height: 20px;
-  left: 45px;
-  top: 25px;
+  background-image: url("/img/pointer.png");
+  background-repeat: no-repeat;
+  width: 13px;
+  height: 12px;
+  left: 48px;
+  top: 32px;
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+  .project-detail .proj-drilldown-tabs a.ui-btn-active:after {
+    background-image: url("/img/pointer@2x.png");
+    -webkit-background-size: 13px 12px;
+    -moz-background-size: 13px 12px;
+    background-size: 13px 12px;
+  }
 }
 .project-detail .proj-dd {
   color: #777;
@@ -400,9 +411,6 @@ ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit 
 .project-detail .proj-dd p {
   line-height: 1.3em;
   font-size: 0.75em;
-}
-.project-detail .proj-dd.proj-dd-supplies ul.product-list.ui-listview li.ui-first-child {
-  border-top: none;
 }
 ul.product-list li.ui-li-has-thumb img {
   padding: 10px;

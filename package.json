@@ -15,7 +15,9 @@
     "nconf": "~0.6.7",
     "request": "~2.21.0",
     "xml2js": "~0.2.7",
-    "moment": "~2.0.0"
+    "moment": "~2.0.0",
+    "redis": "~0.8.3",
+    "connect-redis": "~1.4.5"
   },
   "devDependencies": {},
   "repository": {

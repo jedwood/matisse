@@ -3,14 +3,28 @@ block content
   #new-teacher(data-role='page')
     div(data-role='header', data-position='fixed')
       a(href="/find-schools", data-rel='back') cancel
-      h1 New Teacher
+      h1 Hello Teacher!
 
     div(data-role='content')
 
-      form#new-teacher-form(data-transition='slidedown')
-        label(for='new-teacher-numstudents') How many students in your classroom?
-        input#new-teacher-numstudents(type='number', data-clear-btn="false", name='numstudents', pattern='[0-9]*', value='')
-        //- input#search-schools.search-box(type='search', name='zip', data-theme='c', value=zip, placeholder='zip code')
-        //- input#schools-lat(type='hidden', name='lat', value='')
-        //- input#schools-long(type='hidden', name='long', value='')
-        //-a(data-role='submit', data-inline="true")GO
+      form#new-teacher-form(action='/teachers', method='POST', data-transition='slidedown')
+        input(type='hidden', name='_method', value='post')
+        input#new-teacher-school(type='hidden', name='school', value=school.id)
+
+        label(for='new-teacher-name') What is your name?
+        input#new-teacher-name(type='text', data-clear-btn="false", name='name', value='', placeholder='e.g. Ms. Garcia')
+
+        label(for='new-teacher-grade') Which grade(s) do you teach?
+        input#new-teacher-grade(type='text', data-clear-btn="false", name='grade', value='', placeholder='e.g. 4th grade')
+
+        label(for='new-teacher-numstudents') How many students in your class?
+        input#new-teacher-numstudents(type='number', data-clear-btn="false", name='numStudents', pattern='[0-9]*', value='')
+
+        label(for='new-teacher-email') Email address
+        input#new-teacher-email(type='email', data-clear-btn="false", name='email', value='')
+
+        label(for='new-teacher-password') Password
+        input#new-teacher-password(type='password', data-clear-btn="true", name='password', value='', autocomplete='off')
+
+        input(type='submit', value='create account', data-theme='c')
+

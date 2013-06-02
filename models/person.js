@@ -7,6 +7,7 @@ var PersonSchema = new mongoose.Schema({
   password          : {type:String, set:helpers.saltPassword},
   name              : {type:String},
   grade             : {type:String},
+  numStudents       : {type:Number},
   school            : {type: mongoose.Schema.Types.ObjectId, ref: 'School'},
   isAdmin           : {type: Boolean, 'default': false },
   lastLogin         : {type:Date},

@@ -6,7 +6,9 @@ block content
       h1 Projects
       a.ui-icon-nodisc.big-icon(href="/", data-rel='back', data-icon='home', data-iconpos='notext', data-shadow='false', data-iconshadow='false') Home
     div(data-role='content')
-      .fundertop.fullbleedlr
+      - var isFunder = isFunder || false
+      if (isFunder)
+        .fundertop.fullbleedlr
         h2 welcome
         h1 funder!
         .intromessage

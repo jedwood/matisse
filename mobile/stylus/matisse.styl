@@ -39,8 +39,8 @@ ul.ui-listview
       border-bottom solid 1px #111111
       border-top solid 1px #666666
     &.ui-btn-down-e, &.ui-btn-up-e, &.ui-btn-hover-e
-      border-top solid 1px #dddddd
-      //border-bottom solid 1px #111111
+      //border-top solid 1px #dddddd
+      border-bottom solid 1px #dddddd
       .ui-btn-inner
         span.ui-icon
           color #999
@@ -75,11 +75,12 @@ ul.ui-listview
     margin 0
     color #292929
 
-.fundertop
+.new-proj-top
   mt -15px
   pt 5px
   pl 115px
-  height 170px
+  height 150px
+  border-bottom solid 1px #999
   image '/img/marker.jpg' 95px auto
   background-repeat no-repeat
   h2
@@ -298,16 +299,17 @@ ul.project-list
         color #999
       .ui-btn-inner
         .ui-btn-text
-          fs .9em
+          fs 1.1em
       &.ui-btn-active:after
         content ''
         display block
         position absolute
-        //background-color goldenrod
-        width 20px
-        height 20px
-        left 45px
-        top 25px
+        image '/img/pointer.png' 13px 12px
+        background-repeat no-repeat
+        width 13px
+        height 12px
+        left 48px
+        top 32px
 
   .proj-dd
     color #777
@@ -329,10 +331,10 @@ ul.project-list
       line-height 1.3em
       font-size .75em
 
-    &.proj-dd-supplies
-      ul.product-list.ui-listview
-        li.ui-first-child
-          border-top none
+    // &.proj-dd-supplies
+    //   ul.product-list.ui-listview
+    //     li.ui-first-child
+    //       border-top none
 
 
 ul.product-list

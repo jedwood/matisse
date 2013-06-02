@@ -26,7 +26,7 @@ app.get('/find-schools', function(req, res) {
 });
 
 app.get('/projects', function(req, res) {
-  models.Project.find({}).sort('_id').populate('teacher school').exec(function(err, projects){
+  models.Project.find({'active':true}).sort('_id').populate('teacher school').exec(function(err, projects){
     //fake the subtext
     var expire = true;
     var counter = 0;
@@ -61,13 +61,54 @@ app.get('/projects', function(req, res) {
 });
 
 app.get('/projects/:ID', function(req, res) {
-  //models.Project.findById(req.param('ID')).populate('teacher school').exec(function(err, proj){
-  models.Project.findById('51a77ecbf12e5a848d000002').populate('teacher school').exec(function(err, proj){
+  models.Project.findById(req.param('ID')).populate('teacher school').exec(function(err, proj){
+  //models.Project.findById('51a77ecbf12e5a848d000002').populate('teacher school').exec(function(err, proj){
     if (err) return res.status(500).send(err);
     //TODO make this legit
     models.Product.find({}, function(err, prods) {
       if (err) return res.status(500).send(err);
-      res.render('project-detail', {p:proj, prods:prods});
+      var isnew = req.query.isnew
+      var teacher = req.session.teacher || false;
+      res.render('project-detail', {p:proj, prods:prods, isnew:isnew, teacher:teacher});
+    });
+  });
+});
+
+app.get('/logout', function(req, res) {
+  req.session.destroy(function(){
+    res.send(200);
+  });
+});
+
+app.get('/projects/:ID/fund', function(req, res) {
+  //models.Project.findById(req.param('ID')).populate('teacher school').exec(function(err, proj){
+  // models.Project.findById('51a77ecbf12e5a848d000002').populate('teacher school').exec(function(err, proj){
+  //   if (err) return res.status(500).send(err);
+  //   //TODO make this legit
+  //   models.Product.find({}, function(err, prods) {
+  //     if (err) return res.status(500).send(err);
+  //     res.render('project-detail', {p:proj, prods:prods});
+  //   });
+  // });
+});
+
+app.get('/projects/:ID/clone', function(req, res) {
+  if (!req.session.teacher) return res.status(401).send("Only teachers can copy projects");
+  models.Project.findById(req.param('ID')).exec(function(err, proj){
+    console.log("Here's our full teacher: ");
+    console.log(req.session.teacher);
+    var clone = new models.Project();
+    clone.name = proj.name;
+    clone.description = proj.description;
+    clone.instructions = proj.instructions;
+    //clone.cost = proj.cost;
+    clone.school = req.session.teacher.school;
+    clone.teacher = req.session.teacher._id;
+    clone.active = false;
+    console.log("here's the updated" , clone);
+    clone.save(function(err, newp) {
+      console.log("New Project!", newp);
+      res.redirect('/projects/' + newp.id + "?isnew=true");
     });
   });
 });
@@ -80,8 +121,18 @@ app.get('/teachers/new', function(req, res) {
       res.render('new-teacher', {school:school});
     });
   } else {
-    res.redirect('/find-schools')
+    res.redirect('/find-schools');
   }
+});
+
+app.post('/teachers', function(req, res) {
+  models.Person.create(req.body, function(err, t) {
+    req.session.teacher = t;
+    req.session.save(function(err) {
+      if (err) return res.status(500).send("problem saving session");
+      res.redirect('/projects');
+    });
+  });
 });
 
 app.get('/products/:ID', function(req, res) {
@@ -92,14 +143,13 @@ app.get('/products/:ID', function(req, res) {
 // HELPERS
 
 function schoolsByZip(zip, res) {
-  console.log("Going to fetch schools by this zip: " + zip);
   models.School.find({zip:zip}, function(err, schools) {
     if (err) return res.status(500).send(err);
     if (schools.length) return res.render('find-schools', {zip: zip, schools: schools});;
 
     services.schools(zip, function(err, schoolRes) {
-      console.log("Here are the schools for " + zip);
-      console.log(schoolRes);
+      //console.log("Here are the schools for " + zip);
+      //console.log(schoolRes);
       if (err) return res.status(500).send(err);
       schoolRes.forEach(function(s){
         models.School.create(s, function(err, school) {
@@ -114,14 +164,13 @@ function schoolsByZip(zip, res) {
 }
 
 function productById(pid, res) {
-  console.log("Going to fetch this product: " + pid);
   models.Product.findOne({targetID:pid}, function(err, prod) {
     if (err) return res.status(500).send(err);
     if (prod) return res.send({prod: prod});
 
     services.products(pid, function(err, prodRes) {
-      console.log("Here is the product for " + pid);
-      console.log(prodRes);
+      //console.log("Here is the product for " + pid);
+      //console.log(prodRes);
       var item = prodRes.ItemLookupResponse.Items.Item
       if (err) return res.status(500).send(err);
       var newP = new models.Product();
