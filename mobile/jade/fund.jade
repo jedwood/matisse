@@ -31,7 +31,8 @@ block content
     .proj-footer(data-role='footer', data-position='fixed', data-theme='d')
       a.back-projects-btn.ui-icon-nodisc.big-icon(href='#', data-rel='back', data-icon='remove', data-iconpos='notext', data-shadow='false', data-iconshadow='false') cancel
       .fund-btn-wrapper
-        a.fund-button(href='/checkout', data-role='button', data-theme='b', data-transition='slideup') proceed to checkout
+        //- a.fund-button(href='/checkout', data-role='button', data-theme='b', data-transition='slideup') proceed to checkout
+        a.fund-button(data-role='button', data-theme='b', data-transition='slideup') proceed to checkout
     script
       // WARNING- BAD HACK. This slider doesn't have the right events built in that I want to listen to.
       // thus ye olde setInterval trick.
