@@ -58,12 +58,12 @@ ul.ui-listview li.ui-btn-hover-e .ui-btn-inner a .subtext {
 .splashtop {
   margin-top: -10px;
   height: 210px;
-  background-image: url("/img/colored-pencils.jpg");
+  background-image: url("../img/colored-pencils.jpg");
   background-repeat: no-repeat;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
   .splashtop {
-    background-image: url("/img/colored-pencils@2x.jpg");
+    background-image: url("../img/colored-pencils@2x.jpg");
     -webkit-background-size: 320px auto;
     -moz-background-size: 320px auto;
     background-size: 320px auto;
@@ -91,12 +91,12 @@ ul.ui-listview li.ui-btn-hover-e .ui-btn-inner a .subtext {
   padding-left: 115px;
   height: 130px;
   border-bottom: solid 1px #999;
-  background-image: url("/img/marker.jpg");
+  background-image: url("../img/marker.jpg");
   background-repeat: no-repeat;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
   .about-screen {
-    background-image: url("/img/marker@2x.jpg");
+    background-image: url("../img/marker@2x.jpg");
     -webkit-background-size: 95px auto;
     -moz-background-size: 95px auto;
     background-size: 95px auto;
@@ -128,12 +128,12 @@ ul.ui-listview li.ui-btn-hover-e .ui-btn-inner a .subtext {
   padding-left: 115px;
   height: 150px;
   border-bottom: solid 1px #999;
-  background-image: url("/img/marker.jpg");
+  background-image: url("../img/marker.jpg");
   background-repeat: no-repeat;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
   .new-proj-top {
-    background-image: url("/img/marker@2x.jpg");
+    background-image: url("../img/marker@2x.jpg");
     -webkit-background-size: 95px auto;
     -moz-background-size: 95px auto;
     background-size: 95px auto;
@@ -227,6 +227,48 @@ ul.left-icons li.ui-btn .ui-btn-inner .ui-icon {
 #form-search-schools .ui-input-search {
   border: none;
 }
+.project-filter-container {
+  margin-top: -8px;
+  z-index: 1001;
+  background-color: #333;
+  -webkit-box-shadow: 0px 2px 3px 1px #aaa;
+  box-shadow: 0px 2px 3px 1px #aaa;
+  color: #fff;
+}
+.project-filter-container .ui-select a .ui-btn-inner {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  font-size: 0.8em;
+}
+#project-filter-button {
+  width: 150px;
+  text-align: left;
+}
+#project-filter-listbox {
+  -webkit-box-shadow: 2px 2px 3px 1px #aaa;
+  box-shadow: 2px 2px 3px 1px #aaa;
+  margin-top: 45px;
+  margin-left: -15px;
+  border: none;
+  padding: 0;
+  width: 150px;
+  min-width: 140px;
+}
+#project-filter-listbox .ui-header {
+  display: none;
+}
+#project-filter-listbox .ui-btn-inner {
+  font-size: 0.8em;
+}
+#project-filter-listbox ul li {
+  background-color: #989898;
+  border-bottom: none;
+  border-top-color: #fff;
+}
+#project-filter-listbox ul li a {
+  font-size: 1em;
+}
 ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit {
   padding-left: 80px;
 }
@@ -290,12 +332,12 @@ ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit 
 .proj-top {
   margin-top: -15px;
   height: 150px;
-  background-image: url("/img/projects/project-detail-bg.jpg");
+  background-image: url("../img/projects/project-detail-bg.jpg");
   background-repeat: no-repeat;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
   .proj-top {
-    background-image: url("/img/projects/project-detail-bg@2x.jpg");
+    background-image: url("../img/projects/project-detail-bg@2x.jpg");
     -webkit-background-size: 320px 150px;
     -moz-background-size: 320px 150px;
     background-size: 320px 150px;
@@ -386,7 +428,7 @@ ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit 
 .proj-meta.fund-meta strong {
   color: #fff;
 }
-.proj-drilldown-tabs {
+.project-detail .proj-drilldown-tabs {
   padding-top: 4px;
   padding-bottom: 4px;
   max-width: none;
@@ -398,25 +440,25 @@ ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit 
   -webkit-box-shadow: 0px 1px 1px 0px #aaa;
   box-shadow: 0px 1px 1px 0px #aaa;
 }
-.proj-drilldown-tabs a {
+.project-detail .proj-drilldown-tabs a {
   position: relative;
   border: none;
   color: #0069ff;
 }
-.proj-drilldown-tabs a.ui-btn-active {
+.project-detail .proj-drilldown-tabs a.ui-btn-active {
   border: none;
   background-color: #fff;
   font-weight: bold;
   color: #999;
 }
-.proj-drilldown-tabs a .ui-btn-inner .ui-btn-text {
+.project-detail .proj-drilldown-tabs a .ui-btn-inner .ui-btn-text {
   font-size: 1.1em;
 }
-.proj-drilldown-tabs a.ui-btn-active:after {
+.project-detail .proj-drilldown-tabs a.ui-btn-active:after {
   content: '';
   display: block;
   position: absolute;
-  background-image: url("/img/pointer.png");
+  background-image: url("../img/pointer.png");
   background-repeat: no-repeat;
   width: 13px;
   height: 12px;
@@ -424,8 +466,8 @@ ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit 
   top: 32px;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
-  .proj-drilldown-tabs a.ui-btn-active:after {
-    background-image: url("/img/pointer@2x.png");
+  .project-detail .proj-drilldown-tabs a.ui-btn-active:after {
+    background-image: url("../img/pointer@2x.png");
     -webkit-background-size: 13px 12px;
     -moz-background-size: 13px 12px;
     background-size: 13px 12px;
@@ -504,7 +546,7 @@ ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit 
   position: absolute;
   top: 30px;
   right: 10px;
-  background-color: #009f86;
+  background-color: #c00;
   border: none !important;
   padding: 0;
   width: 100px;
@@ -524,13 +566,13 @@ ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit 
   background-repeat: no-repeat;
 }
 .sadHenri {
-  background-image: url("/img/henri-sad.png");
+  background-image: url("../img/henri-sad.png");
 }
 .happyHenri {
-  background-image: url("/img/henri-happy.png");
+  background-image: url("../img/henri-happy.png");
 }
 .ecstaticHenri {
-  background-image: url("/img/henri-ecstatic.png");
+  background-image: url("../img/henri-ecstatic.png");
 }
 .funder-message {
   text-align: center;

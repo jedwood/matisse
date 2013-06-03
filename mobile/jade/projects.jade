@@ -4,7 +4,18 @@ block content
     //- include _sidemenu
     div(data-role='header', data-position='fixed')
       h1 projects
-      a.ui-icon-nodisc.big-icon(href="/", data-rel='back', data-icon='home', data-iconpos='notext', data-shadow='false', data-iconshadow='false') Home
+      a.ui-icon-nodisc.big-icon(href='/', data-icon='home', data-iconpos='notext', data-shadow='false', data-iconshadow='false') Home
+    .project-filter-container
+      //- span show:
+      //- <label for='select-choice-a' class='select'>Custom select menu:</label>
+      select#project-filter(name='project-filter', data-native-menu='false', data-theme='d')
+        option all projects
+        option(value='all') all projects
+        option(value='time') expiring soon
+        option(value='money') nearly funded
+        option(value='map-marker') close to me
+        option(value='leaf') recently added
+
     div(data-role='content')
       - var isFunder = isFunder || false
       if (isFunder)
@@ -19,3 +30,18 @@ block content
           //-   a(href='#') find classrooms to help
 
       include _project-list
+    script
+      $('#project-filter').on('change', function(event) {
+        var showType = $('#project-filter').val();
+        $projects = $('ul.project-list li');
+        if (showType == 'all') {
+          $projects.removeClass('hide');
+        } else {
+          $projects.addClass('hide');
+          $projects.each(function(ind, proj) {
+            var $proj = $(proj)
+            if ($proj.data('filter-type') == ('ui-icon-' + showType)) $proj.removeClass('hide');
+          });
+        }
+
+      });

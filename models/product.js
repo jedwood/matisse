@@ -9,6 +9,7 @@ var ProductSchema = new mongoose.Schema({
   title             : {type:String},
   description       : {type:String},
   price             : {type:String},
+  quantity          : {type:Number}, //temp hack
   image             : {type:String},
   link              : {type:String}
 }, {strict: true});
@@ -28,7 +29,7 @@ ProductSchema.pre('save', function(next){
   if ( this.isNew) {
     console.log(this);
     var self = this;
-    console.log("Trying to downloa " + self.image + " to: " + __dirname + '/../public/img/products/' + self.id +  '.jpg');
+    console.log("Trying to download " + self.image + " to: " + __dirname + '/../public/img/products/' + self.id +  '.jpg');
     request(self.image).pipe(fs.createWriteStream(__dirname + '/../public/img/products/' + self.id +  '.jpg'))
     next();
   }

@@ -77,6 +77,7 @@ app.get('/projects/:ID', function(req, res) {
       if (err) return res.status(500).send(err);
       var isnew = req.query.isnew
       var teacher = req.session.teacher || false;
+      //teacher = req.query.isteacher || false;
       res.render('project-detail', {p:proj, prods:prods, isnew:isnew, teacher:teacher});
     });
   });

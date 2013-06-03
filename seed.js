@@ -53,7 +53,7 @@ var images = [
 'mossimodipdye.png'
  ];
 
- models.School.find({}, function(err, schools) {
+models.School.find({}, function(err, schools) {
   var shuff = shuffle(schools);
   for (var i=0; i<8; i++) {
     var t = new models.Person();
@@ -70,7 +70,7 @@ var images = [
   }
  });
 
- function shuffle(o){ //v1.0
+function shuffle(o){ //v1.0
     for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 };

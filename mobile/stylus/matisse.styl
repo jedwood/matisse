@@ -54,7 +54,7 @@ ul.ui-listview
 .splashtop
   mt -10px
   height 210px
-  image '/img/colored-pencils.jpg' 320px auto
+  image '../img/colored-pencils.jpg' 320px auto
   background-repeat no-repeat
 
 .welcome
@@ -80,7 +80,7 @@ ul.ui-listview
   pl 115px
   height 130px
   border-bottom solid 1px #999
-  image '/img/marker.jpg' 95px auto
+  image '../img/marker.jpg' 95px auto
   background-repeat no-repeat
   h2
     margin 0
@@ -108,7 +108,7 @@ ul.ui-listview
   pl 115px
   height 150px
   border-bottom solid 1px #999
-  image '/img/marker.jpg' 95px auto
+  image '../img/marker.jpg' 95px auto
   background-repeat no-repeat
   h2
     margin 0
@@ -195,6 +195,44 @@ ul.left-icons
   .ui-input-search
     border none
 
+.project-filter-container
+  mt -8px
+  z-index 1001
+  bgc #333333
+  box-shadow 0px 2px 3px 1px #aaa
+  color #fff
+  .ui-select
+    a
+      .ui-btn-inner
+        pt 8px
+        pb 8px
+        pl 15px
+        fs .8em
+
+#project-filter-button
+  width 150px
+  text-align left
+
+#project-filter-listbox
+  box-shadow 2px 2px 3px 1px #aaa
+  mt 45px
+  ml -15px
+  border none
+  padding 0
+  width 150px
+  min-width 140px
+  .ui-header
+    display none
+  .ui-btn-inner
+    fs .8em
+  ul
+    li
+      bgc #989898
+      border-bottom none
+      border-top-color #fff
+      a
+        fs 1em
+
 ul.project-list
   li.ui-li-has-thumb
     .ui-btn-inner
@@ -247,14 +285,15 @@ ul.project-list
                 color #aaa
 
 
-//.project-detail
+
 .proj-top
   mt -15px
   height 150px
-  image '/img/projects/project-detail-bg.jpg' 320px 150px
+  image '../img/projects/project-detail-bg.jpg' 320px 150px
   background-repeat no-repeat
   &.fund-top
     height 100px
+
 .proj-footer
   .fund-btn-wrapper
     width 55%
@@ -266,6 +305,7 @@ ul.project-list
         .ui-btn-text
           fs 1.3em
           fw normal
+
 .proj-meta
   h1
     mb 0px
@@ -314,38 +354,40 @@ ul.project-list
     background rgba(50, 50, 50, .6)
     h1, .message, strong
       color #fff
-.proj-drilldown-tabs
-  pt 4px
-  pb 4px
-  max-width none
-  margin 20px -15px
-  bgc white
-  border-top solid 1px #e0e0e0
-  border-right none
-  border-left none
-  box-shadow 0px 1px 1px 0px #aaa
-  a
-    position relative
-    border none
-    color #0069ff
-    &.ui-btn-active
+
+.project-detail
+  .proj-drilldown-tabs
+    pt 4px
+    pb 4px
+    max-width none
+    margin 20px -15px
+    bgc white
+    border-top solid 1px #e0e0e0
+    border-right none
+    border-left none
+    box-shadow 0px 1px 1px 0px #aaa
+    a
+      position relative
       border none
-      bgc #fff
-      fw bold
-      color #999
-    .ui-btn-inner
-      .ui-btn-text
-        fs 1.1em
-    &.ui-btn-active:after
-      content ''
-      display block
-      position absolute
-      image '/img/pointer.png' 13px 12px
-      background-repeat no-repeat
-      width 13px
-      height 12px
-      left 48px
-      top 32px
+      color #0069ff
+      &.ui-btn-active
+        border none
+        bgc #fff
+        fw bold
+        color #999
+      .ui-btn-inner
+        .ui-btn-text
+          fs 1.1em
+      &.ui-btn-active:after
+        content ''
+        display block
+        position absolute
+        image '../img/pointer.png' 13px 12px
+        background-repeat no-repeat
+        width 13px
+        height 12px
+        left 48px
+        top 32px
 
 .proj-dd
   color #777
@@ -405,7 +447,8 @@ ul.project-list
   position absolute
   top 30px
   right 10px
-  background-color #009f86
+  // background-color #009f86
+  background-color #cc0000
   border none !important
   padding 0
   width 100px
@@ -424,11 +467,11 @@ ul.project-list
   background-repeat no-repeat
 
 .sadHenri
-  background-image url('/img/henri-sad.png')
+  background-image url('../img/henri-sad.png')
 .happyHenri
-  background-image url('/img/henri-happy.png')
+  background-image url('../img/henri-happy.png')
 .ecstaticHenri
-  background-image url('/img/henri-ecstatic.png')
+  background-image url('../img/henri-ecstatic.png')
 
 .funder-message
   text-align center

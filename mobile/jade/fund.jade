@@ -20,7 +20,7 @@ block content
       #henri-face.sadHenri
 
       span.my-contribution my contribution
-      input#henri-slider(type='range', name='henrislider', data-mini='false', value='0', min='0', max='25', step='1', data-theme='e', data-highlight='true')
+      input#henri-slider(type='range', name='henrislider', data-mini='true', value='0', min='0', max='25', step='1', data-theme='e', data-highlight='true')
       span.henri-money $
 
     div.funder-message(data-role='content')
@@ -33,12 +33,16 @@ block content
       .fund-btn-wrapper
         a.fund-button(href='/checkout', data-role='button', data-theme='b', data-transition='slideup') proceed to checkout
     script
-      //$('#henrislider').on('change', function(event){
-      setInterval(function(){
+      // WARNING- BAD HACK. This slider doesn't have the right events built in that I want to listen to.
+      // thus ye olde setInterval trick.
+      $(document).on('pageinit', '#fund', function() {
         $henriSlider = $('#henri-slider');
         $henriFace = $('#henri-face');
-        var amt = parseInt($henriSlider.val(), 10);
-        if (amt > 19) $henriFace.removeClass('sadHenri ecstaticHenri').addClass('ecstaticHenri')
-        else if (amt > 4) $henriFace.removeClass('sadHenri ecstaticHenri').addClass('happyHenri')
-        else $henriFace.removeClass('happyHenri ecstaticHenri').addClass('sadHenri')
-      }, 1000);
+        function henryMood() {
+          var amt = parseInt($henriSlider.val(), 10);
+          if (amt > 19) $henriFace.removeClass('sadHenri ecstaticHenri').addClass('ecstaticHenri')
+          else if (amt > 4) $henriFace.removeClass('sadHenri ecstaticHenri').addClass('happyHenri')
+          else $henriFace.removeClass('happyHenri ecstaticHenri').addClass('sadHenri')
+        }
+        setInterval(henryMood, 300);
+      });
