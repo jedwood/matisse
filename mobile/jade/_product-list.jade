@@ -2,7 +2,7 @@ ul.product-list(data-role='listview', data-inset='false', data-theme='e')
   for p in prods
     - var quantity = p.quantity || 1
     li
-      img.retina(src='http://static.matisseapp.com.s3.amazonaws.com/img/products/' + p.id + '.jpg')
+      img.retina(src='http://cdn.matisseapp.com/img/products/' + p.id + '.jpg')
       h5= p.title
       p.price= p.price
         span.each each

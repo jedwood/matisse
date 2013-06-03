@@ -2,7 +2,7 @@ ul.project-list(data-role='listview', data-inset='false', data-theme='e')
   for p in projects
     li(data-icon='chevron-right', data-filter-type=p.subtextClass)
       a(href='/projects/' + p.id, data-transition='slide', data-prefetch=p.prefetch)
-        img.retina(src='http://static.matisseapp.com.s3.amazonaws.com/img/projects/' + p.smallImage)
+        img.retina(src='http://cdn.matisseapp.com/img/projects/' + p.smallImage)
         h5= p.name
         p.message <strong>#{p.teacher.name}</strong> at <strong>#{p.school.name}</strong>
           //- span.grade &nbsp;- #{p.teacher.grade}
