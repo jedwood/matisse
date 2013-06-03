@@ -69,8 +69,9 @@ app.get('/projects', function(req, res) {
 });
 
 app.get('/projects/:ID', function(req, res) {
-  models.Project.findById(req.param('ID')).populate('teacher school').exec(function(err, proj){
-  //models.Project.findById('51a77ecbf12e5a848d000002').populate('teacher school').exec(function(err, proj){
+  // Force our featured project for now...
+  //models.Project.findById(req.param('ID')).populate('teacher school').exec(function(err, proj){
+  models.Project.findById('51a77ecbf12e5a848d000002').populate('teacher school').exec(function(err, proj){
     if (err) return res.status(500).send(err);
     //TODO make this legit
     models.Product.find({}, function(err, prods) {
@@ -139,7 +140,7 @@ app.post('/teachers', function(req, res) {
     req.session.teacher = t;
     req.session.save(function(err) {
       if (err) return res.status(500).send("problem saving session");
-      res.redirect('/projects');
+      res.redirect('/projects?isteacher=true');
     });
   });
 });
