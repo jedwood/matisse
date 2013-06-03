@@ -466,6 +466,10 @@ ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit 
   position: relative;
   margin-top: 25px;
 }
+.henri-container .preloader {
+  width: 1px;
+  height: 1px;
+}
 .henri-container .ui-slider-track {
   margin: 20px 10px 10px 10px;
   margin-top: 20px;
@@ -519,13 +523,13 @@ ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit 
   height: 122px;
   background-repeat: no-repeat;
 }
-#henri-face.sadHenri {
+.sadHenri {
   background-image: url("/img/henri-sad.png");
 }
-#henri-face.happyHenri {
+.happyHenri {
   background-image: url("/img/henri-happy.png");
 }
-#henri-face.ecstaticHenri {
+.ecstaticHenri {
   background-image: url("/img/henri-ecstatic.png");
 }
 .funder-message {
