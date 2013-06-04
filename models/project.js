@@ -1,4 +1,5 @@
 var mongoose      = require('mongoose'),
+    moment        = require('moment'),
     plugins       = require('./plugins');
 
 
@@ -15,6 +16,7 @@ var ProjectSchema = new mongoose.Schema({
   expiration        : {type: Date},
   amountFunded      : {type: Number},
   instructions      : {type: String},
+  products          : [{type: mongoose.Schema.Types.ObjectId, ref: 'Product'}],
   funders           : [{type: mongoose.Schema.Types.ObjectId, ref: 'Person'}],
   active            : {type: Boolean, default: true}
 }, {strict: true});
@@ -22,5 +24,17 @@ var ProjectSchema = new mongoose.Schema({
 ProjectSchema.plugin(plugins.timestamps);
 ProjectSchema.plugin(plugins.hideProps, ['owner']);
 ProjectSchema.plugin(plugins.protectProps, ['updatedAt']);
+
+// ProjectSchema.pre('save', function(next){
+//   if ( this.isNew) {
+//     var self = this;
+//     //TODO put the due date ahead one week.
+//     next();
+//   }
+//   else
+//   {
+//     next();
+//   }
+// });
 
 module.exports = ProjectSchema;

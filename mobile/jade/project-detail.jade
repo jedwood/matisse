@@ -12,8 +12,11 @@ block content
           h2 project
           h1 created!
           p.intromessage Congratulations! Your project is ready to roll.
+      else if (moss)
+        .proj-top.fullbleedlr.mossimo
       else
-        .proj-top.fullbleedlr
+        .proj-top.fullbleedlr.bovit
+
 
       .proj-meta
         h1= p.name
@@ -24,17 +27,19 @@ block content
             .progbar-inner
           .ui-grid-c.proj-stats
               .ui-block-a
-                h5 <sup>$</sup>80
-                p OUT OF <sup>$</sup>120
+                h5 <sup>$</sup>#{p.amountFunded}
+                p OUT OF <sup>$</sup>#{p.cost}
               .ui-block-b
+                //- TODO p.expiration
                 h5 1
                 p DAY LEFT
               .ui-block-c
                 h5 12
                 p FUNDERS
               .ui-block-d
-                h5 23
+                h5= p.teacher.numStudents
                 p STUDENTS
+
       .proj-drilldown-tabs(data-role='navbar')
         ul
           li

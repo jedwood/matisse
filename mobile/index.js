@@ -69,18 +69,22 @@ app.get('/projects', function(req, res) {
 });
 
 app.get('/projects/:ID', function(req, res) {
-  // Force our featured project for now...
-  //models.Project.findById(req.param('ID')).populate('teacher school').exec(function(err, proj){
-  models.Project.findById('51a77ecbf12e5a848d000002').populate('teacher school').exec(function(err, proj){
+  models.Project.findById(req.param('ID')).populate('teacher school products').exec(function(err, proj){
+  // Force our featured project for
+  //models.Project.findById('51a77ecbf12e5a848d000002').populate('teacher school').exec(function(err, proj){
     if (err) return res.status(500).send(err);
     //TODO make this legit
-    models.Product.find({}, function(err, prods) {
-      if (err) return res.status(500).send(err);
-      var isnew = req.query.isnew
-      var teacher = req.session.teacher || false;
-      //teacher = req.query.isteacher || false;
-      res.render('project-detail', {p:proj, prods:prods, isnew:isnew, teacher:teacher});
-    });
+    // models.Product.find({}, function(err, prods) {
+    //   if (err) return res.status(500).send(err);
+    //   var isnew = req.query.isnew
+    //   var teacher = req.session.teacher || false;
+    //   //teacher = req.query.isteacher || false;
+    //   res.render('project-detail', {p:proj, prods:prods, isnew:isnew, teacher:teacher});
+    // });
+    var isnew = req.query.isnew
+    var moss = !(req.param('ID') == '51a77ecbf12e5a848d000002')
+    var teacher = req.session.teacher || false;
+    res.render('project-detail', {p:proj, prods:proj.products, isnew:isnew, teacher:teacher, moss:moss});
   });
 });
 
@@ -91,10 +95,12 @@ app.get('/logout', function(req, res) {
 });
 
 app.get('/fund', function(req, res) {
-  res.render('fund');
+  models.Project.findById('51a77ecbf12e5a848d000002').populate('teacher school').exec(function(err, proj){
+    res.render('fund', {p:proj});
+  });
 });
 
-app.get('/projects/:ID/fund', function(req, res) {
+//app.get('/projects/:ID/fund', function(req, res) {
   //models.Project.findById(req.param('ID')).populate('teacher school').exec(function(err, proj){
   // models.Project.findById('51a77ecbf12e5a848d000002').populate('teacher school').exec(function(err, proj){
   //   if (err) return res.status(500).send(err);
@@ -104,7 +110,7 @@ app.get('/projects/:ID/fund', function(req, res) {
   //     res.render('project-detail', {p:proj, prods:prods});
   //   });
   // });
-});
+//});
 
 app.get('/projects/:ID/clone', function(req, res) {
   if (!req.session.teacher) return res.status(401).send("Only teachers can copy projects");
@@ -179,8 +185,6 @@ function productById(pid, res) {
     if (prod) return res.send({prod: prod});
 
     services.products(pid, function(err, prodRes) {
-      //console.log("Here is the product for " + pid);
-      //console.log(prodRes);
       var item = prodRes.ItemLookupResponse.Items.Item
       if (err) return res.status(500).send(err);
       var newP = new models.Product();

@@ -332,19 +332,32 @@ ul.project-list li.ui-li-has-thumb .ui-btn-inner .ui-btn-text a.ui-link-inherit 
 .proj-top {
   margin-top: -15px;
   height: 150px;
-  background-image: url("../img/projects/project-detail-bg.jpg");
   background-repeat: no-repeat;
 }
+.proj-top.fund-top {
+  height: 100px;
+}
+.proj-top.mossimo {
+  background-image: url("../img/projects/mossimo-bg.jpg");
+}
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
-  .proj-top {
-    background-image: url("../img/projects/project-detail-bg@2x.jpg");
+  .proj-top.mossimo {
+    background-image: url("../img/projects/mossimo-bg@2x.jpg");
     -webkit-background-size: 320px 150px;
     -moz-background-size: 320px 150px;
     background-size: 320px 150px;
   }
 }
-.proj-top.fund-top {
-  height: 100px;
+.proj-top.bovit {
+  background-image: url("../img/projects/project-detail-bg.jpg");
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+  .proj-top.bovit {
+    background-image: url("../img/projects/project-detail-bg@2x.jpg");
+    -webkit-background-size: 320px 150px;
+    -moz-background-size: 320px 150px;
+    background-size: 320px 150px;
+  }
 }
 .proj-footer .fund-btn-wrapper {
   width: 55%;

@@ -2,17 +2,13 @@ extends layout
 block content
   #fund(data-role='page')
 
-    //- div(data-role='header', data-position='fixed')
-    //-   h1 fund this project
-    //-   a(href='/', data-rel='back') cancel
     .fund-top.proj-top
       .fund-meta.proj-meta
-        //- h1.inverse= p.name
-        //- p.message.inverse <strong>#{p.teacher.name}</strong> at <strong>#{p.school.name}</strong>
-        //-   span.grade &nbsp;- #{p.teacher.grade}
-        h1 Some Awesome Project
-        p.message <strong>Mr. Wood</strong> at <strong>Jenner Academy</strong>
-          span.grade &nbsp;- 4th grade
+        h1= p.name
+        p.message <strong>#{p.teacher.name}</strong> at <strong>#{p.school.name}</strong>
+          span.grade &nbsp;- #{p.teacher.grade}
+        //- p.message <strong>Mr. Wood</strong> at <strong>Jenner Academy</strong>
+        //-   span.grade &nbsp;- 4th grade
 
     .henri-container(data-role='content')
       .preloader.happyHenri
@@ -42,7 +38,7 @@ block content
         function henryMood() {
           var amt = parseInt($henriSlider.val(), 10);
           if (amt > 19) $henriFace.removeClass('sadHenri ecstaticHenri').addClass('ecstaticHenri')
-          else if (amt > 4) $henriFace.removeClass('sadHenri ecstaticHenri').addClass('happyHenri')
+          else if (amt > 0) $henriFace.removeClass('sadHenri ecstaticHenri').addClass('happyHenri')
           else $henriFace.removeClass('happyHenri ecstaticHenri').addClass('sadHenri')
         }
         setInterval(henryMood, 300);
